@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/github/license/fmind/bromate)](https://github.com/fmind/bromate/blob/main/LICENCE.txt)
 [![Release](https://img.shields.io/github/v/release/fmind/bromate)](https://github.com/fmind/bromate/releases)
 
-Browser automation through agentic workflows..
+Browser automation through agentic workflows.
 
 # Installation
 
