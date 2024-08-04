@@ -1,0 +1,20 @@
+{
+  "template": "https://github.com/fmind/cookiecutter-mlops-package",
+  "commit": "00fef7106e4abd8ddc7a1625ebe7342fcb145f6c",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "user": "fmind",
+      "name": "Bromate",
+      "repository": "bromate",
+      "package": "bromate",
+      "license": "MIT",
+      "version": "0.1.0",
+      "description": "Browser automation through agentic workflows.",
+      "python_version": "3.12",
+      "mlflow_version": "2.14.3",
+      "_template": "https://github.com/fmind/cookiecutter-mlops-package"
+    }
+  },
+  "directory": null
+}
