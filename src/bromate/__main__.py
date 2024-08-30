@@ -1,4 +1,4 @@
-"""Entry point of the package."""
+"""Entry point of the application."""
 
 # %% IMPORTS
 

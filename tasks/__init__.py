@@ -9,7 +9,6 @@ from invoke import Collection
 from . import (
     checks,
     cleans,
-    commits,
     containers,
     docs,
     formats,
@@ -25,7 +24,6 @@ ns = Collection()
 
 ns.add_collection(checks)
 ns.add_collection(cleans)
-ns.add_collection(commits)
 ns.add_collection(containers)
 ns.add_collection(docs)
 ns.add_collection(formats)

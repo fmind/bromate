@@ -25,9 +25,3 @@ repos:
     hooks:
       - id: ruff
       - id: ruff-format
-  - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.27.0
-    hooks:
-      - id: commitizen
-      - id: commitizen-branch
-        stages: [push]

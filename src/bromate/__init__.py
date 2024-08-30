@@ -1,1 +1,1 @@
-"""Browser automation through agentic workflows.."""
+"""Browser automation through agentic workflows."""

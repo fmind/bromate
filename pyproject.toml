@@ -23,7 +23,12 @@ bromate = "bromate.scripts:main"
 [tool.poetry.dependencies]
 python = "^3.12"
 google-generativeai = "^0.7.2"
+loguru = "^0.7.2"
+pydantic = "^2.8.2"
 selenium = "^4.23.1"
+pydantic-settings = "^2.4.0"
+ipython = "^8.26.0"
+pillow = "^10.4.0"
 
 [tool.poetry.group.checks.dependencies]
 bandit = "^1.7.9"
@@ -35,7 +40,6 @@ pytest-xdist = "^3.6.1"
 ruff = "^0.5.0"
 
 [tool.poetry.group.commits.dependencies]
-commitizen = "^3.27.0"
 pre-commit = "^3.7.1"
 
 [tool.poetry.group.dev.dependencies]
