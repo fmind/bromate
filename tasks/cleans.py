@@ -55,18 +55,6 @@ def cache(ctx: Context) -> None:
     ctx.run("rm -rf .cache/")
 
 
-@task
-def mlruns(ctx: Context) -> None:
-    """Clean the mlruns folder."""
-    ctx.run("rm -rf mlruns/*")
-
-
-@task
-def outputs(ctx: Context) -> None:
-    """Clean the outputs folder."""
-    ctx.run("rm -rf outputs/*")
-
-
 # %% - Sources
 
 
@@ -112,7 +100,7 @@ def tools(_: Context) -> None:
     """Run all tools tasks."""
 
 
-@task(pre=[dist, docs, cache, mlruns, outputs])
+@task(pre=[dist, docs, cache])
 def folders(_: Context) -> None:
     """Run all folders tasks."""
 

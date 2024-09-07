@@ -5,7 +5,7 @@
 [tool.poetry]
 name = "bromate"
 version = "0.1.0"
-description = "Browser automation through agentic workflows."
+description = "Web browser automation through agentic workflows."
 repository = "https://github.com/fmind/bromate"
 documentation = "https://fmind.github.io/bromate/"
 authors = ["fmind"]
@@ -24,11 +24,10 @@ bromate = "bromate.scripts:main"
 python = "^3.12"
 google-generativeai = "^0.7.2"
 loguru = "^0.7.2"
-pydantic = "^2.8.2"
-selenium = "^4.23.1"
-pydantic-settings = "^2.4.0"
-ipython = "^8.26.0"
 pillow = "^10.4.0"
+pydantic = "^2.9.0"
+pydantic-settings = "^2.4.0"
+selenium = "^4.24.0"
 
 [tool.poetry.group.checks.dependencies]
 bandit = "^1.7.9"
@@ -57,13 +56,6 @@ nbformat = "^5.10.4"
 [tool.bandit]
 targets = ["src"]
 
-[tool.commitizen]
-name = "cz_conventional_commits"
-tag_format = "v$version"
-version_scheme = "pep440"
-version_provider = "poetry"
-update_changelog_on_bump = true
-
 [tool.coverage.run]
 branch = true
 source = ["src"]
@@ -75,6 +67,7 @@ strict = true
 python_version = "3.12"
 check_untyped_defs = true
 ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
 
 [tool.pytest.ini_options]
 addopts = "--verbosity=2"

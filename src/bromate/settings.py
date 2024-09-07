@@ -1,57 +1,34 @@
-"""Settings for configuring the application."""
+"""Configure the application with settings."""
 
 # %% IMPORTS
 
-import pydantic as pdt
 import pydantic_settings as pdts
 
-from bromate import actions
+from bromate import actions, agents, drivers, executions, interactions, types
 
-# %% SETTINGS
-
-
-class ModelSettings(pdt.BaseModel, frozen=True, strict=True, extra="forbid"):
-    """Define settings for the model."""
-
-    api_key: pdt.SecretStr | None = None
-    name: str = "gemini-1.5-flash-latest"
-    temperature: float = 0.0
-    candidate_count: int = 1
-    max_output_tokens: int = 1000
-    system_instructions: str = "You are a browser automation bot. Your goal is to understand the user request and execute actions on its browser using the tools at your disposal."
+# %% CLASSES
 
 
-class BrowserSettings(pdt.BaseModel, frozen=True, strict=True, extra="forbid"):
-    """Define settings for the browser."""
-
-    keep_alive: bool = True
+class Setting(pdts.BaseSettings, env_prefix="bromate", cli_parse_args=True):
+    """Base class for setting."""
 
 
-class ActionsSettings(pdt.BaseModel, frozen=True, strict=True, extra="forbid"):
-    """Define settings for all actions."""
+class ApplicationSetting(Setting):
+    """Execution actions on a web browser using agentic workflows."""
 
-    get: actions.get = actions.get()
-
-
-class SessionSettings(pdt.BaseModel, frozen=True, strict=True, extra="forbid"):
-    """Define settings for the session."""
-
-    model: ModelSettings = ModelSettings()
-    browser: BrowserSettings = BrowserSettings()
-    actions: ActionsSettings = ActionsSettings()
-    max_steps: int = 5
-    continuation_message: str = "Continue the execution if necessary or return 'DONE'."
-    interruption_message: str = "DONE"
-
-
-class InterfaceSettings(pdt.BaseModel, frozen=True, strict=True, extra="forbid"):
-    """Define settings for the interface."""
-
-
-class ApplicationSettings(pdts.BaseSettings, strict=True, extra="forbid"):
-    """Define settings for the application."""
-
-    session: SessionSettings = SessionSettings()
-    interface: InterfaceSettings = InterfaceSettings()
-    # pydantic
-    model_config = pdts.SettingsConfigDict(env_nested_delimiter="__", env_file=".env")
+    query: pdts.CliPositionalArg[str] = types.Field(description="User query to execute")
+    agent: agents.AgentConfig = types.Field(
+        default=agents.AgentConfig(), description="Configuration of the agent"
+    )
+    action: actions.ActionConfig = types.Field(
+        default=actions.ActionConfig(), description="Configuration for all actions"
+    )
+    driver: drivers.DriverConfig = types.Field(
+        default=drivers.DriverConfig(), description="Configuration of the web driver"
+    )
+    execution: executions.ExecutionConfig = types.Field(
+        default=executions.ExecutionConfig(), description="Configuration of the execution"
+    )
+    interaction: interactions.InteractionConfig = types.Field(
+        default=interactions.InteractionConfig(), description="Configuration of the interaction"
+    )

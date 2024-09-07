@@ -1,35 +1,29 @@
-"""Scripts of the application."""
+"""Run the application scripts."""
 
 # %% IMPORTS
 
-import argparse
+from loguru import logger
 
-import bromate
-from bromate import interfaces, sessions, settings
+from bromate import agents, drivers, executions, interactions, settings
 
-# %% PARSERS
-
-parser = argparse.ArgumentParser(description=bromate.__doc__)
-parser.add_argument("query", help="Automation query to execute")
-
-# %% SCRIPTS
+# %% FUNCTIONS
 
 
-def main(argv: list[str] | None = None) -> int:
-    """Run the main script function."""
-    # arguments
-    args = parser.parse_args(args=argv)
-    query = args.query
-    # settings
-    app_settings = settings.ApplicationSettings()
-    session_settings = app_settings.session
-    interface_settings = app_settings.interface
-    # session
-    session = sessions.Session.from_settings(session_settings=session_settings)
-    # interface
-    interface = interfaces.Interface.from_settings(interface_settings=interface_settings)
-    # execution
-    execution = session.execute(query=query)
-    # interaction
-    interface.interact(execution=execution)
-    return 0
+def main(args: list[str] | None = None) -> int:
+    """Run the main application script with arguments."""
+    # parse
+    setting = settings.ApplicationSetting(_cli_parse_args=args)
+    logger.debug("Application setting: {}", setting)
+    # init
+    agent = agents.init_agent_from_config(config=setting.agent)
+    driver = drivers.init_driver_from_config(config=setting.driver)
+    # run
+    execution = executions.execute(
+        query=setting.query,
+        agent=agent,
+        driver=driver,
+        config=setting.execution,
+        action_config=setting.action,
+    )
+    # return
+    return interactions.interact(execution=execution, config=setting.interaction)

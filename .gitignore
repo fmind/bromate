@@ -22,7 +22,6 @@
 
 # Project
 /docs/*
-/mlruns/*
 /outputs/*
 !**/.gitkeep
 
