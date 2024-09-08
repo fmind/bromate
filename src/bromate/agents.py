@@ -34,7 +34,10 @@ class AgentConfig(types.ImmutableData):
         description="API key of the agent platform (Google)",
     )
     name: str = types.Field(
-        default="gemini-1.5-flash-latest", description="Name of the agent to use"
+        default="gemini-1.5-flash-latest",
+        description="Name of the agent to use",
+        # default="gemini-1.5-pro-latest",
+        # description="Name of the agent to use",
     )
     temperature: float = types.Field(default=0.0, description="Temperature of the agent")
     candidate_count: pdt.PositiveInt = types.Field(
@@ -44,7 +47,8 @@ class AgentConfig(types.ImmutableData):
         default=1000, description="Maximum output tokens to generate"
     )
     system_instructions: str = types.Field(
-        default="You are a browser automation bot. Your goal is to understand the user request and execute actions on its browser using the tools at your disposal.",
+        default="You are a browser automation system. Your goal is to understand the user request and execute actions on its browser using the tools at your disposal. After each step, you will receive a screenshot and the page source of the current browser window to continue the execution."
+        "",
         description="System instructions for the agent",
     )
 
@@ -52,6 +56,7 @@ class AgentConfig(types.ImmutableData):
 # %% ALIASES
 
 Agent: T.TypeAlias = genai.GenerativeModel
+Blob: T.TypeAlias = genai.protos.Blob
 Call: T.TypeAlias = genai.protos.FunctionCall
 Content: T.TypeAlias = genai.protos.Content
 Function: T.TypeAlias = genai.protos.FunctionDeclaration
@@ -59,6 +64,7 @@ GenerationConfig: T.TypeAlias = genai.GenerationConfig
 Part: T.TypeAlias = genai.protos.Part
 Response: T.TypeAlias = genai.types.GenerateContentResponse
 Schema: T.TypeAlias = genai.protos.Schema
+Structure: T.TypeAlias = genai.protos.FunctionResponse
 Tool: T.TypeAlias = genai.protos.Tool
 Type: T.TypeAlias = genai.protos.Type
 

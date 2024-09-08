@@ -37,17 +37,20 @@ def execute(
     driver: drivers.Driver,
     config: ExecutionConfig,
     action_config: actions.ActionConfig,
-    agent_tools: list[agents.Tool] = actions.TOOLS,
+    agent_functions: list[agents.Function] = actions.AGENT_FUNCTIONS,
 ) -> Execution:
     """Execute a query given a config."""
     # contents
     query_content = agents.Content(role=agents.Role.USER.value, parts=[agents.Part(text=query)])
     contents = [query_content]
+    # tools
+    agent_tool = agents.Tool(function_declarations=agent_functions)
+    tools = [agent_tool]
     # steps
     while True:
         done = False
         # response
-        response = agent.generate_content(contents=contents, tools=agent_tools)
+        response = agent.generate_content(contents=contents, tools=tools)
         # feedback
         if feedback := response.prompt_feedback:
             logger.warning("Agent feedback: {}", feedback)
@@ -60,34 +63,38 @@ def execute(
                 usage.candidates_token_count,
             )
         # parts
-        parts = []
+        structures: list[agents.Structure] = []
         for i, part in enumerate(response.parts, start=1):
             logger.debug("## Agent response part {}: {}", i, str(part).strip())
             if call := part.function_call:
                 name, kwargs = call.name, call.args
-                kwargs_text = ", ".join(f"{key}={val}" for key, val in kwargs.items())
-                calling_text = f"Calling tool: {name}({kwargs_text})"
-                if action := getattr(actions, name):
-                    action(driver=driver, config=action_config, **kwargs)
-                else:
-                    raise ValueError(f"Cannot execute action (unknown action name): {name}!")
                 if name in config.stop_actions:
                     done = True  # stop execution
-                part = agents.Part(text=calling_text)
-                parts.append(part)
-            elif text := part.text:
-                parts.append(agents.Part(text=text.strip()))
+                if action := getattr(actions, name):
+                    structure = action(driver=driver, config=action_config, **kwargs)
+                    structures.append(structure)
+                else:
+                    raise ValueError(f"Cannot execute action (unknown action name): {name}!")
+            elif part.text:
+                pass
             else:
                 raise ValueError(f"Cannot handle agent response (unknown part type): {part}!")
         # output
-        agent_content = agents.Content(role=agents.Role.AGENT.value, parts=parts)
+        agent_content = agents.Content(role=agents.Role.AGENT.value, parts=response.parts)
         if done is True:
             return agent_content
         contents.append(agent_content)
         user_input = yield agent_content
-        user_text = user_input or config.default_message
         # input
+        message = user_input or config.default_message
+        returned = [agents.Part(function_response=s) for s in structures]
+        screenshot = agents.Blob(mime_type="image/png", data=driver.get_screenshot_as_png())
         user_content = agents.Content(
-            role=agents.Role.USER.value, parts=[agents.Part(text=user_text)]
+            role=agents.Role.USER.value,
+            parts=[
+                agents.Part(inline_data=screenshot),
+                agents.Part(text=message),
+            ]
+            + returned,
         )
         contents.append(user_content)

@@ -7,7 +7,7 @@ import pydantic as pdt
 # %% CLASSES
 
 
-class Data(pdt.BaseModel, strict=True, extra="forbid", validate_assignment=True):
+class Data(pdt.BaseModel, extra="forbid", validate_assignment=True):
     """Base class for data."""
 
 

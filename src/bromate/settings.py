@@ -14,7 +14,7 @@ class Setting(pdts.BaseSettings, env_prefix="bromate", cli_parse_args=True):
 
 
 class ApplicationSetting(Setting):
-    """Execution actions on a web browser using agentic workflows."""
+    """Execute actions on a web browser from a user query."""
 
     query: pdts.CliPositionalArg[str] = types.Field(description="User query to execute")
     agent: agents.AgentConfig = types.Field(

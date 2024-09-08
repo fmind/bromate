@@ -14,7 +14,7 @@ from bromate import agents, executions, types
 class InteractionConfig(types.ImmutableData):
     """Config for the interaction."""
 
-    stay_open: bool = types.Field(default=False, description="Keep the browser open before exiting")
+    stay_open: bool = types.Field(default=True, description="Keep the browser open before exiting")
     interactive: bool = types.Field(
         default=False, description="Ask for user input after every action"
     )
@@ -36,9 +36,14 @@ def display(content: agents.Content) -> None:
     for part in content.parts:
         if text := part.text:
             texts.append(text)
+        elif call := part.function_call:
+            name, kwargs = call.name, call.args
+            kwargs_text = ", ".join(f"{key}={val}" for key, val in kwargs.items())
+            calling_text = f"Calling tool: {name}({kwargs_text})"
+            texts.append(calling_text)
         else:
             raise ValueError(f"Cannot display agent content (unknown agent part): {part}!")
-    print(f"> AGENT: {'\n- '.join(texts)}", flush=True)
+    print(f"> AGENT: {' & '.join(texts)}", flush=True)
 
 
 def interact(execution: executions.Execution, config: InteractionConfig) -> int:
@@ -59,6 +64,7 @@ def interact(execution: executions.Execution, config: InteractionConfig) -> int:
             interaction_count += 1
         # stop the execution
     except StopIteration as stop:
+        # returned value
         content = stop.value
         display(content=content)
     # leave the browser open?
