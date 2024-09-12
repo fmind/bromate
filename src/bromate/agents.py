@@ -34,10 +34,7 @@ class AgentConfig(types.ImmutableData):
         description="API key of the agent platform (Google)",
     )
     name: str = types.Field(
-        default="gemini-1.5-flash-latest",
-        description="Name of the agent to use",
-        # default="gemini-1.5-pro-latest",
-        # description="Name of the agent to use",
+        default="gemini-1.5-flash-latest", description="Name of the agent to use"
     )
     temperature: float = types.Field(default=0.0, description="Temperature of the agent")
     candidate_count: pdt.PositiveInt = types.Field(
@@ -47,7 +44,7 @@ class AgentConfig(types.ImmutableData):
         default=1000, description="Maximum output tokens to generate"
     )
     system_instructions: str = types.Field(
-        default="You are a browser automation system. Your goal is to understand the user request and execute actions on its browser using the tools at your disposal. After each step, you will receive a screenshot and the page source of the current browser window to continue the execution."
+        default="You are a browser automation system. Your goal is to understand the user request and execute actions on its browser using the tools at your disposal. After each step, you will receive a screenshot and the page source of the current browser window."
         "",
         description="System instructions for the agent",
     )

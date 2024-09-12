@@ -4,7 +4,7 @@
 
 [tool.poetry]
 name = "bromate"
-version = "0.1.0"
+version = "1.0.0"
 description = "Web browser automation through agentic workflows."
 repository = "https://github.com/fmind/bromate"
 documentation = "https://fmind.github.io/bromate/"
@@ -24,7 +24,6 @@ bromate = "bromate.scripts:main"
 python = "^3.12"
 google-generativeai = "^0.7.2"
 loguru = "^0.7.2"
-pillow = "^10.4.0"
 pydantic = "^2.9.0"
 pydantic-settings = "^2.4.0"
 selenium = "^4.24.0"

@@ -14,6 +14,7 @@ from . import (
     formats,
     installs,
     packages,
+    publishes,
 )
 
 # %% NAMESPACES
@@ -29,3 +30,4 @@ ns.add_collection(docs)
 ns.add_collection(formats)
 ns.add_collection(installs)
 ns.add_collection(packages)
+ns.add_collection(publishes)

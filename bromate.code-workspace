@@ -25,7 +25,6 @@
 			"ms-python.mypy-type-checker",
 			"ms-python.python",
 			"ms-python.vscode-pylance",
-			"redhat.vscode-yaml",
 		]
 	}
 }

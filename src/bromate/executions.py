@@ -19,7 +19,7 @@ class ExecutionConfig(types.ImmutableData):
         description="Name of actions that can stop the execution",
     )
     default_message: str = types.Field(
-        default=f"Continue the execution if necessary or call the {actions.done.__name__} tool",
+        default=f"Continue the execution if necessary or call the {actions.done.__name__} tool if you are done",
         description="Default message to send to the agent when no input is provided by the user",
     )
 
@@ -71,7 +71,14 @@ def execute(
                 if name in config.stop_actions:
                     done = True  # stop execution
                 if action := getattr(actions, name):
-                    structure = action(driver=driver, config=action_config, **kwargs)
+                    try:
+                        structure = action(driver=driver, config=action_config, **kwargs)
+                    except Exception as error:
+                        kwargs_text = ", ".join(f"{key}={val}" for key, val in kwargs.items())
+                        logger.error(
+                            f"Error while executing action '{name}' with kwargs '{kwargs_text}': {error}"
+                        )
+                        structure = agents.Structure(name=name, response={"error": str(error)})
                     structures.append(structure)
                 else:
                     raise ValueError(f"Cannot execute action (unknown action name): {name}!")
@@ -95,6 +102,6 @@ def execute(
                 agents.Part(inline_data=screenshot),
                 agents.Part(text=message),
             ]
-            + returned,
+            + returned,  # action calls
         )
         contents.append(user_content)

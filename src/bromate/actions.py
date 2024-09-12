@@ -16,7 +16,7 @@ class ActionConfig(types.ImmutableData):
     """Config for all actions."""
 
     sleep_time: pdt.PositiveFloat = types.Field(
-        default=1.0, description="Time to sleep after loading a page"
+        default=0.5, description="Time to sleep after loading a page"
     )
 
 
@@ -85,6 +85,7 @@ def done(driver: drivers.Driver, config: ActionConfig) -> agents.Structure:
 def back(driver: drivers.Driver, config: ActionConfig) -> agents.Structure:
     """Go back from one page."""
     driver.back()
+    time.sleep(config.sleep_time)
     return agents.Structure(
         name=back.__name__,
         response={
@@ -99,6 +100,7 @@ def back(driver: drivers.Driver, config: ActionConfig) -> agents.Structure:
 def forward(driver: drivers.Driver, config: ActionConfig) -> agents.Structure:
     """Go forward from one page."""
     driver.forward()
+    time.sleep(config.sleep_time)
     return agents.Structure(
         name=forward.__name__,
         response={
@@ -121,10 +123,18 @@ def forward(driver: drivers.Driver, config: ActionConfig) -> agents.Structure:
     )
 )
 def click(driver: drivers.Driver, config: ActionConfig, css_selector: str) -> agents.Structure:
-    """Click on an element given its css_selector."""
+    """Click on an element given its CSS selector."""
     element = driver.find_element(by=drivers.CSS, value=css_selector)
     element.click()
-    return agents.Structure(name=click.__name__, response={"clicked": True})
+    time.sleep(config.sleep_time)
+    return agents.Structure(
+        name=click.__name__,
+        response={
+            "title": driver.title,
+            "url": driver.current_url,
+            "page_source": driver.page_source,
+        },
+    )
 
 
 @declare(
@@ -139,7 +149,7 @@ def click(driver: drivers.Driver, config: ActionConfig, css_selector: str) -> ag
     )
 )
 def clear(driver: drivers.Driver, config: ActionConfig, css_selector: str) -> agents.Structure:
-    """Clearn an element given its css_selector."""
+    """Clearn an element given its CSS selector."""
     element = driver.find_element(by=drivers.CSS, value=css_selector)
     element.clear()
     return agents.Structure(name=clear.__name__, response={"cleared": True})
@@ -157,7 +167,7 @@ def clear(driver: drivers.Driver, config: ActionConfig, css_selector: str) -> ag
     )
 )
 def submit(driver: drivers.Driver, config: ActionConfig, css_selector: str) -> agents.Structure:
-    """Submit an element given its css_selector."""
+    """Submit an element given its CSS selector."""
     element = driver.find_element(by=drivers.CSS, value=css_selector)
     element.submit()
     time.sleep(config.sleep_time)
@@ -188,7 +198,7 @@ def submit(driver: drivers.Driver, config: ActionConfig, css_selector: str) -> a
 def write(
     driver: drivers.Driver, config: ActionConfig, css_selector: str, text: str
 ) -> agents.Structure:
-    """write text an the element given its css_selector."""
+    """write text an the element given its CSS selector."""
     element = driver.find_element(by=drivers.CSS, value=css_selector)
     element.send_keys(text)
     return agents.Structure(name=write.__name__, response={"wrote": True})
@@ -214,7 +224,7 @@ def write(
 def select(
     driver: drivers.Driver, config: ActionConfig, css_selector: str, values: list[str]
 ) -> agents.Structure:
-    """Select the values in the element given its css_selector."""
+    """Select the values in the element given its CSS selector."""
     element = driver.find_element(by=drivers.CSS, value=css_selector)
     selector = T.cast(drivers.Select, element)
     selector.deselect_all()

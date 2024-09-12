@@ -14,9 +14,9 @@ class Setting(pdts.BaseSettings, env_prefix="bromate", cli_parse_args=True):
 
 
 class ApplicationSetting(Setting):
-    """Execute actions on a web browser from a user query."""
+    """Execute actions on web browser from a user query in natural language."""
 
-    query: pdts.CliPositionalArg[str] = types.Field(description="User query to execute")
+    query: pdts.CliPositionalArg[str] = types.Field(description="User query in natural language")
     agent: agents.AgentConfig = types.Field(
         default=agents.AgentConfig(), description="Configuration of the agent"
     )
