@@ -43,21 +43,13 @@ pip install bromate
 
 To use Bromate, you can provide a natural language query describing the task you want to automate. Bromate will then interact with the agent (Gemini) to interpret the query and generate a sequence of actions to be executed by the Selenium WebDriver.
 
-**Example 1: Subscribe to the MLOps Community Newsletter**
+**Example 1: Subscribe to the MLOps Community Newsletter ([video link](demos/MLOps.webm))**
 
-```bash
-bromate "Open the https://MLOps.Community website. Click on the 'Join' link. Write the address 'hello@mlops'"
-```
+> bromate "Open the https://MLOps.Community website. Click on the 'Join' link. Write the address 'hello@mlops'"
 
-<video src='demos/MLOps.webm' />
+**Example 2: Find the latest version of the Python language ([video link](demos/Python.webm))**
 
-**Example 2: Find the latest version of the Python language**
-
-```bash
-bromate --interaction.stay_open=False --agent.name "gemini-1.5-pro-latest" "Go to Python.org. Click on the downloads page. Click on the PEP link for the future Python release. Summarize the release schedule dates."
-```
-
-<video src='demos/Python.webm' />
+> bromate --interaction.stay_open=False --agent.name "gemini-1.5-pro-latest" "Go to Python.org. Click on the downloads page. Click on the PEP link for the future Python release. Summarize the release schedule dates."
 
 ## Arguments
 
