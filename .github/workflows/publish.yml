@@ -11,6 +11,9 @@ concurrency:
   group: publish-workflow
 jobs:
   pages:
+    permissions:
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,7 +24,7 @@ jobs:
         with:
           folder: docs/
           branch: gh-pages
-  packages:
+  dockers:
     permissions:
       packages: write
     runs-on: ubuntu-latest
@@ -45,3 +48,10 @@ jobs:
           tags: |
             ${{ env.DOCKER_IMAGE }}:latest
             ${{ env.DOCKER_IMAGE }}:${{ github.ref_name }}
+  packages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - run: poetry config pypi-token.pypi ${{secrets.PYPI_TOKEN}}
+      - run: poetry publish --build
