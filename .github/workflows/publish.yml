@@ -4,6 +4,9 @@ on:
     types:
       - edited
       - published
+  push:
+    branches:
+      - main
 env:
   DOCKER_IMAGE: ghcr.io/fmind/bromate
 concurrency:
