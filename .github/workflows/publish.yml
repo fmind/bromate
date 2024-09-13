@@ -1,12 +1,12 @@
 name: Publish
 on:
+  push:
+    branches:
+      - main
   release:
     types:
       - edited
       - published
-  push:
-    branches:
-      - main
 env:
   DOCKER_IMAGE: ghcr.io/fmind/bromate
 concurrency:
