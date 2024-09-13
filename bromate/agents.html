@@ -1,0 +1,2187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="pdoc 14.6.1"/>
+    <title>bromate.agents API documentation</title>
+
+    <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
+    <style>/*! syntax-highlighting.css */pre{line-height:125%;}span.linenos{color:inherit; background-color:transparent; padding-left:5px; padding-right:20px;}.pdoc-code .hll{background-color:#ffffcc}.pdoc-code{background:#f8f8f8;}.pdoc-code .c{color:#3D7B7B; font-style:italic}.pdoc-code .err{border:1px solid #FF0000}.pdoc-code .k{color:#008000; font-weight:bold}.pdoc-code .o{color:#666666}.pdoc-code .ch{color:#3D7B7B; font-style:italic}.pdoc-code .cm{color:#3D7B7B; font-style:italic}.pdoc-code .cp{color:#9C6500}.pdoc-code .cpf{color:#3D7B7B; font-style:italic}.pdoc-code .c1{color:#3D7B7B; font-style:italic}.pdoc-code .cs{color:#3D7B7B; font-style:italic}.pdoc-code .gd{color:#A00000}.pdoc-code .ge{font-style:italic}.pdoc-code .gr{color:#E40000}.pdoc-code .gh{color:#000080; font-weight:bold}.pdoc-code .gi{color:#008400}.pdoc-code .go{color:#717171}.pdoc-code .gp{color:#000080; font-weight:bold}.pdoc-code .gs{font-weight:bold}.pdoc-code .gu{color:#800080; font-weight:bold}.pdoc-code .gt{color:#0044DD}.pdoc-code .kc{color:#008000; font-weight:bold}.pdoc-code .kd{color:#008000; font-weight:bold}.pdoc-code .kn{color:#008000; font-weight:bold}.pdoc-code .kp{color:#008000}.pdoc-code .kr{color:#008000; font-weight:bold}.pdoc-code .kt{color:#B00040}.pdoc-code .m{color:#666666}.pdoc-code .s{color:#BA2121}.pdoc-code .na{color:#687822}.pdoc-code .nb{color:#008000}.pdoc-code .nc{color:#0000FF; font-weight:bold}.pdoc-code .no{color:#880000}.pdoc-code .nd{color:#AA22FF}.pdoc-code .ni{color:#717171; font-weight:bold}.pdoc-code .ne{color:#CB3F38; font-weight:bold}.pdoc-code .nf{color:#0000FF}.pdoc-code .nl{color:#767600}.pdoc-code .nn{color:#0000FF; font-weight:bold}.pdoc-code .nt{color:#008000; font-weight:bold}.pdoc-code .nv{color:#19177C}.pdoc-code .ow{color:#AA22FF; font-weight:bold}.pdoc-code .w{color:#bbbbbb}.pdoc-code .mb{color:#666666}.pdoc-code .mf{color:#666666}.pdoc-code .mh{color:#666666}.pdoc-code .mi{color:#666666}.pdoc-code .mo{color:#666666}.pdoc-code .sa{color:#BA2121}.pdoc-code .sb{color:#BA2121}.pdoc-code .sc{color:#BA2121}.pdoc-code .dl{color:#BA2121}.pdoc-code .sd{color:#BA2121; font-style:italic}.pdoc-code .s2{color:#BA2121}.pdoc-code .se{color:#AA5D1F; font-weight:bold}.pdoc-code .sh{color:#BA2121}.pdoc-code .si{color:#A45A77; font-weight:bold}.pdoc-code .sx{color:#008000}.pdoc-code .sr{color:#A45A77}.pdoc-code .s1{color:#BA2121}.pdoc-code .ss{color:#19177C}.pdoc-code .bp{color:#008000}.pdoc-code .fm{color:#0000FF}.pdoc-code .vc{color:#19177C}.pdoc-code .vg{color:#19177C}.pdoc-code .vi{color:#19177C}.pdoc-code .vm{color:#19177C}.pdoc-code .il{color:#666666}</style>
+    <style>/*! theme.css */:root{--pdoc-background:#fff;}.pdoc{--text:#212529;--muted:#6c757d;--link:#3660a5;--link-hover:#1659c5;--code:#f8f8f8;--active:#fff598;--accent:#eee;--accent2:#c1c1c1;--nav-hover:rgba(255, 255, 255, 0.5);--name:#0066BB;--def:#008800;--annotation:#007020;}</style>
+    <style>/*! layout.css */html, body{width:100%;height:100%;}html, main{scroll-behavior:smooth;}body{background-color:var(--pdoc-background);}@media (max-width:769px){#navtoggle{cursor:pointer;position:absolute;width:50px;height:40px;top:1rem;right:1rem;border-color:var(--text);color:var(--text);display:flex;opacity:0.8;z-index:999;}#navtoggle:hover{opacity:1;}#togglestate + div{display:none;}#togglestate:checked + div{display:inherit;}main, header{padding:2rem 3vw;}header + main{margin-top:-3rem;}.git-button{display:none !important;}nav input[type="search"]{max-width:77%;}nav input[type="search"]:first-child{margin-top:-6px;}nav input[type="search"]:valid ~ *{display:none !important;}}@media (min-width:770px){:root{--sidebar-width:clamp(12.5rem, 28vw, 22rem);}nav{position:fixed;overflow:auto;height:100vh;width:var(--sidebar-width);}main, header{padding:3rem 2rem 3rem calc(var(--sidebar-width) + 3rem);width:calc(54rem + var(--sidebar-width));max-width:100%;}header + main{margin-top:-4rem;}#navtoggle{display:none;}}#togglestate{position:absolute;height:0;opacity:0;}nav.pdoc{--pad:clamp(0.5rem, 2vw, 1.75rem);--indent:1.5rem;background-color:var(--accent);border-right:1px solid var(--accent2);box-shadow:0 0 20px rgba(50, 50, 50, .2) inset;padding:0 0 0 var(--pad);overflow-wrap:anywhere;scrollbar-width:thin; scrollbar-color:var(--accent2) transparent; z-index:1}nav.pdoc::-webkit-scrollbar{width:.4rem; }nav.pdoc::-webkit-scrollbar-thumb{background-color:var(--accent2); }nav.pdoc > div{padding:var(--pad) 0;}nav.pdoc .module-list-button{display:inline-flex;align-items:center;color:var(--text);border-color:var(--muted);margin-bottom:1rem;}nav.pdoc .module-list-button:hover{border-color:var(--text);}nav.pdoc input[type=search]{display:block;outline-offset:0;width:calc(100% - var(--pad));}nav.pdoc .logo{max-width:calc(100% - var(--pad));max-height:35vh;display:block;margin:0 auto 1rem;transform:translate(calc(-.5 * var(--pad)), 0);}nav.pdoc ul{list-style:none;padding-left:0;}nav.pdoc > div > ul{margin-left:calc(0px - var(--pad));}nav.pdoc li a{padding:.2rem 0 .2rem calc(var(--pad) + var(--indent));}nav.pdoc > div > ul > li > a{padding-left:var(--pad);}nav.pdoc li{transition:all 100ms;}nav.pdoc li:hover{background-color:var(--nav-hover);}nav.pdoc a, nav.pdoc a:hover{color:var(--text);}nav.pdoc a{display:block;}nav.pdoc > h2:first-of-type{margin-top:1.5rem;}nav.pdoc .class:before{content:"class ";color:var(--muted);}nav.pdoc .function:after{content:"()";color:var(--muted);}nav.pdoc footer:before{content:"";display:block;width:calc(100% - var(--pad));border-top:solid var(--accent2) 1px;margin-top:1.5rem;padding-top:.5rem;}nav.pdoc footer{font-size:small;}</style>
+    <style>/*! content.css */.pdoc{color:var(--text);box-sizing:border-box;line-height:1.5;background:none;}.pdoc .pdoc-button{cursor:pointer;display:inline-block;border:solid black 1px;border-radius:2px;font-size:.75rem;padding:calc(0.5em - 1px) 1em;transition:100ms all;}.pdoc .alert{padding:1rem 1rem 1rem calc(1.5rem + 24px);border:1px solid transparent;border-radius:.25rem;background-repeat:no-repeat;background-position:.75rem center;margin-bottom:1rem;}.pdoc .alert > em{display:none;}.pdoc .alert > *:last-child{margin-bottom:0;}.pdoc .alert.note {color:#084298;background-color:#cfe2ff;border-color:#b6d4fe;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23084298%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%2016A8%208%200%201%200%208%200a8%208%200%200%200%200%2016zm.93-9.412-1%204.705c-.07.34.029.533.304.533.194%200%20.487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703%200-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381%202.29-.287zM8%205.5a1%201%200%201%201%200-2%201%201%200%200%201%200%202z%22/%3E%3C/svg%3E");}.pdoc .alert.warning{color:#664d03;background-color:#fff3cd;border-color:#ffecb5;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23664d03%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8.982%201.566a1.13%201.13%200%200%200-1.96%200L.165%2013.233c-.457.778.091%201.767.98%201.767h13.713c.889%200%201.438-.99.98-1.767L8.982%201.566zM8%205c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%205.995A.905.905%200%200%201%208%205zm.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2z%22/%3E%3C/svg%3E");}.pdoc .alert.danger{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5.52.359A.5.5%200%200%201%206%200h4a.5.5%200%200%201%20.474.658L8.694%206H12.5a.5.5%200%200%201%20.395.807l-7%209a.5.5%200%200%201-.873-.454L6.823%209.5H3.5a.5.5%200%200%201-.48-.641l2.5-8.5z%22/%3E%3C/svg%3E");}.pdoc .visually-hidden{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0, 0, 0, 0) !important;white-space:nowrap !important;border:0 !important;}.pdoc h1, .pdoc h2, .pdoc h3{font-weight:300;margin:.3em 0;padding:.2em 0;}.pdoc > section:not(.module-info) h1{font-size:1.5rem;font-weight:500;}.pdoc > section:not(.module-info) h2{font-size:1.4rem;font-weight:500;}.pdoc > section:not(.module-info) h3{font-size:1.3rem;font-weight:500;}.pdoc > section:not(.module-info) h4{font-size:1.2rem;}.pdoc > section:not(.module-info) h5{font-size:1.1rem;}.pdoc a{text-decoration:none;color:var(--link);}.pdoc a:hover{color:var(--link-hover);}.pdoc blockquote{margin-left:2rem;}.pdoc pre{border-top:1px solid var(--accent2);border-bottom:1px solid var(--accent2);margin-top:0;margin-bottom:1em;padding:.5rem 0 .5rem .5rem;overflow-x:auto;background-color:var(--code);}.pdoc code{color:var(--text);padding:.2em .4em;margin:0;font-size:85%;background-color:var(--accent);border-radius:6px;}.pdoc a > code{color:inherit;}.pdoc pre > code{display:inline-block;font-size:inherit;background:none;border:none;padding:0;}.pdoc > section:not(.module-info){margin-bottom:1.5rem;}.pdoc .modulename{margin-top:0;font-weight:bold;}.pdoc .modulename a{color:var(--link);transition:100ms all;}.pdoc .git-button{float:right;border:solid var(--link) 1px;}.pdoc .git-button:hover{background-color:var(--link);color:var(--pdoc-background);}.view-source-toggle-state,.view-source-toggle-state ~ .pdoc-code{display:none;}.view-source-toggle-state:checked ~ .pdoc-code{display:block;}.view-source-button{display:inline-block;float:right;font-size:.75rem;line-height:1.5rem;color:var(--muted);padding:0 .4rem 0 1.3rem;cursor:pointer;text-indent:-2px;}.view-source-button > span{visibility:hidden;}.module-info .view-source-button{float:none;display:flex;justify-content:flex-end;margin:-1.2rem .4rem -.2rem 0;}.view-source-button::before{position:absolute;content:"View Source";display:list-item;list-style-type:disclosure-closed;}.view-source-toggle-state:checked ~ .attr .view-source-button::before,.view-source-toggle-state:checked ~ .view-source-button::before{list-style-type:disclosure-open;}.pdoc .docstring{margin-bottom:1.5rem;}.pdoc section:not(.module-info) .docstring{margin-left:clamp(0rem, 5vw - 2rem, 1rem);}.pdoc .docstring .pdoc-code{margin-left:1em;margin-right:1em;}.pdoc h1:target,.pdoc h2:target,.pdoc h3:target,.pdoc h4:target,.pdoc h5:target,.pdoc h6:target,.pdoc .pdoc-code > pre > span:target{background-color:var(--active);box-shadow:-1rem 0 0 0 var(--active);}.pdoc .pdoc-code > pre > span:target{display:block;}.pdoc div:target > .attr,.pdoc section:target > .attr,.pdoc dd:target > a{background-color:var(--active);}.pdoc *{scroll-margin:2rem;}.pdoc .pdoc-code .linenos{user-select:none;}.pdoc .attr:hover{filter:contrast(0.95);}.pdoc section, .pdoc .classattr{position:relative;}.pdoc .headerlink{--width:clamp(1rem, 3vw, 2rem);position:absolute;top:0;left:calc(0rem - var(--width));transition:all 100ms ease-in-out;opacity:0;}.pdoc .headerlink::before{content:"#";display:block;text-align:center;width:var(--width);height:2.3rem;line-height:2.3rem;font-size:1.5rem;}.pdoc .attr:hover ~ .headerlink,.pdoc *:target > .headerlink,.pdoc .headerlink:hover{opacity:1;}.pdoc .attr{display:block;margin:.5rem 0 .5rem;padding:.4rem .4rem .4rem 1rem;background-color:var(--accent);overflow-x:auto;}.pdoc .classattr{margin-left:2rem;}.pdoc .name{color:var(--name);font-weight:bold;}.pdoc .def{color:var(--def);font-weight:bold;}.pdoc .signature{background-color:transparent;}.pdoc .param, .pdoc .return-annotation{white-space:pre;}.pdoc .signature.multiline .param{display:block;}.pdoc .signature.condensed .param{display:inline-block;}.pdoc .annotation{color:var(--annotation);}.pdoc .view-value-toggle-state,.pdoc .view-value-toggle-state ~ .default_value{display:none;}.pdoc .view-value-toggle-state:checked ~ .default_value{display:inherit;}.pdoc .view-value-button{font-size:.5rem;vertical-align:middle;border-style:dashed;margin-top:-0.1rem;}.pdoc .view-value-button:hover{background:white;}.pdoc .view-value-button::before{content:"show";text-align:center;width:2.2em;display:inline-block;}.pdoc .view-value-toggle-state:checked ~ .view-value-button::before{content:"hide";}.pdoc .inherited{margin-left:2rem;}.pdoc .inherited dt{font-weight:700;}.pdoc .inherited dt, .pdoc .inherited dd{display:inline;margin-left:0;margin-bottom:.5rem;}.pdoc .inherited dd:not(:last-child):after{content:", ";}.pdoc .inherited .class:before{content:"class ";}.pdoc .inherited .function a:after{content:"()";}.pdoc .search-result .docstring{overflow:auto;max-height:25vh;}.pdoc .search-result.focused > .attr{background-color:var(--active);}.pdoc .attribution{margin-top:2rem;display:block;opacity:0.5;transition:all 200ms;filter:grayscale(100%);}.pdoc .attribution:hover{opacity:1;filter:grayscale(0%);}.pdoc .attribution img{margin-left:5px;height:35px;vertical-align:middle;width:70px;transition:all 200ms;}.pdoc table{display:block;width:max-content;max-width:100%;overflow:auto;margin-bottom:1rem;}.pdoc table th{font-weight:600;}.pdoc table th, .pdoc table td{padding:6px 13px;border:1px solid var(--accent2);}</style>
+    <style>/*! custom.css */</style></head>
+<body>
+    <nav class="pdoc">
+        <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
+        <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
+        <div>            <a class="pdoc-button module-list-button" href="../bromate.html">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
+  <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+</svg>                &nbsp;bromate</a>
+
+
+            <input type="search" placeholder="Search..." role="searchbox" aria-label="search"
+                   pattern=".+" required>
+
+
+
+            <h2>API Documentation</h2>
+                <ul class="memberlist">
+            <li>
+                    <a class="class" href="#Role">Role</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#Role.AGENT">AGENT</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Role.USER">USER</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#AgentConfig">AgentConfig</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#AgentConfig.api_key">api_key</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#AgentConfig.name">name</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#AgentConfig.temperature">temperature</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#AgentConfig.candidate_count">candidate_count</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#AgentConfig.max_output_tokens">max_output_tokens</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#AgentConfig.system_instructions">system_instructions</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#AgentConfig.model_config">model_config</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#AgentConfig.model_fields">model_fields</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#AgentConfig.model_computed_fields">model_computed_fields</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="variable" href="#Agent">Agent</a>
+            </li>
+            <li>
+                    <a class="class" href="#Blob">Blob</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#Blob.mime_type">mime_type</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Blob.data">data</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="variable" href="#Call">Call</a>
+            </li>
+            <li>
+                    <a class="class" href="#Content">Content</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#Content.parts">parts</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Content.role">role</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="variable" href="#Function">Function</a>
+            </li>
+            <li>
+                    <a class="class" href="#GenerationConfig">GenerationConfig</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#GenerationConfig.__init__">GenerationConfig</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#GenerationConfig.candidate_count">candidate_count</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#GenerationConfig.stop_sequences">stop_sequences</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#GenerationConfig.max_output_tokens">max_output_tokens</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#GenerationConfig.temperature">temperature</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#GenerationConfig.top_p">top_p</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#GenerationConfig.top_k">top_k</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#GenerationConfig.response_mime_type">response_mime_type</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#GenerationConfig.response_schema">response_schema</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#Part">Part</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#Part.text">text</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Part.inline_data">inline_data</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Part.function_call">function_call</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Part.function_response">function_response</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Part.file_data">file_data</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Part.executable_code">executable_code</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Part.code_execution_result">code_execution_result</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="variable" href="#Response">Response</a>
+            </li>
+            <li>
+                    <a class="class" href="#Schema">Schema</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#Schema.type_">type_</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Schema.format_">format_</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Schema.description">description</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Schema.nullable">nullable</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Schema.enum">enum</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Schema.items">items</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Schema.properties">properties</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Schema.required">required</a>
+                        </li>
+                        <li>
+                                <a class="class" href="#Schema.PropertiesEntry">Schema.PropertiesEntry</a>
+                                        <ul class="memberlist">
+                            </ul>
+
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="variable" href="#Structure">Structure</a>
+            </li>
+            <li>
+                    <a class="class" href="#Tool">Tool</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#Tool.function_declarations">function_declarations</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Tool.code_execution">code_execution</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#Type">Type</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#Type.TYPE_UNSPECIFIED">TYPE_UNSPECIFIED</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Type.STRING">STRING</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Type.NUMBER">NUMBER</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Type.INTEGER">INTEGER</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Type.BOOLEAN">BOOLEAN</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Type.ARRAY">ARRAY</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Type.OBJECT">OBJECT</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="function" href="#init_agent_from_config">init_agent_from_config</a>
+            </li>
+    </ul>
+
+
+
+        <a class="attribution" title="pdoc: Python API documentation generator" href="https://pdoc.dev" target="_blank">
+            built with <span class="visually-hidden">pdoc</span><img
+                alt="pdoc logo"
+                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20role%3D%22img%22%20aria-label%3D%22pdoc%20logo%22%20width%3D%22300%22%20height%3D%22150%22%20viewBox%3D%22-1%200%2060%2030%22%3E%3Ctitle%3Epdoc%3C/title%3E%3Cpath%20d%3D%22M29.621%2021.293c-.011-.273-.214-.475-.511-.481a.5.5%200%200%200-.489.503l-.044%201.393c-.097.551-.695%201.215-1.566%201.704-.577.428-1.306.486-2.193.182-1.426-.617-2.467-1.654-3.304-2.487l-.173-.172a3.43%203.43%200%200%200-.365-.306.49.49%200%200%200-.286-.196c-1.718-1.06-4.931-1.47-7.353.191l-.219.15c-1.707%201.187-3.413%202.131-4.328%201.03-.02-.027-.49-.685-.141-1.763.233-.721.546-2.408.772-4.076.042-.09.067-.187.046-.288.166-1.347.277-2.625.241-3.351%201.378-1.008%202.271-2.586%202.271-4.362%200-.976-.272-1.935-.788-2.774-.057-.094-.122-.18-.184-.268.033-.167.052-.339.052-.516%200-1.477-1.202-2.679-2.679-2.679-.791%200-1.496.352-1.987.9a6.3%206.3%200%200%200-1.001.029c-.492-.564-1.207-.929-2.012-.929-1.477%200-2.679%201.202-2.679%202.679A2.65%202.65%200%200%200%20.97%206.554c-.383.747-.595%201.572-.595%202.41%200%202.311%201.507%204.29%203.635%205.107-.037.699-.147%202.27-.423%203.294l-.137.461c-.622%202.042-2.515%208.257%201.727%2010.643%201.614.908%203.06%201.248%204.317%201.248%202.665%200%204.492-1.524%205.322-2.401%201.476-1.559%202.886-1.854%206.491.82%201.877%201.393%203.514%201.753%204.861%201.068%202.223-1.713%202.811-3.867%203.399-6.374.077-.846.056-1.469.054-1.537zm-4.835%204.313c-.054.305-.156.586-.242.629-.034-.007-.131-.022-.307-.157-.145-.111-.314-.478-.456-.908.221.121.432.25.675.355.115.039.219.051.33.081zm-2.251-1.238c-.05.33-.158.648-.252.694-.022.001-.125-.018-.307-.157-.217-.166-.488-.906-.639-1.573.358.344.754.693%201.198%201.036zm-3.887-2.337c-.006-.116-.018-.231-.041-.342.635.145%201.189.368%201.599.625.097.231.166.481.174.642-.03.049-.055.101-.067.158-.046.013-.128.026-.298.004-.278-.037-.901-.57-1.367-1.087zm-1.127-.497c.116.306.176.625.12.71-.019.014-.117.045-.345.016-.206-.027-.604-.332-.986-.695.41-.051.816-.056%201.211-.031zm-4.535%201.535c.209.22.379.47.358.598-.006.041-.088.138-.351.234-.144.055-.539-.063-.979-.259a11.66%2011.66%200%200%200%20.972-.573zm.983-.664c.359-.237.738-.418%201.126-.554.25.237.479.548.457.694-.006.042-.087.138-.351.235-.174.064-.694-.105-1.232-.375zm-3.381%201.794c-.022.145-.061.29-.149.401-.133.166-.358.248-.69.251h-.002c-.133%200-.306-.26-.45-.621.417.091.854.07%201.291-.031zm-2.066-8.077a4.78%204.78%200%200%201-.775-.584c.172-.115.505-.254.88-.378l-.105.962zm-.331%202.302a10.32%2010.32%200%200%201-.828-.502c.202-.143.576-.328.984-.49l-.156.992zm-.45%202.157l-.701-.403c.214-.115.536-.249.891-.376a11.57%2011.57%200%200%201-.19.779zm-.181%201.716c.064.398.194.702.298.893-.194-.051-.435-.162-.736-.398.061-.119.224-.3.438-.495zM8.87%204.141c0%20.152-.123.276-.276.276s-.275-.124-.275-.276.123-.276.276-.276.275.124.275.276zm-.735-.389a1.15%201.15%200%200%200-.314.783%201.16%201.16%200%200%200%201.162%201.162c.457%200%20.842-.27%201.032-.653.026.117.042.238.042.362a1.68%201.68%200%200%201-1.679%201.679%201.68%201.68%200%200%201-1.679-1.679c0-.843.626-1.535%201.436-1.654zM5.059%205.406A1.68%201.68%200%200%201%203.38%207.085a1.68%201.68%200%200%201-1.679-1.679c0-.037.009-.072.011-.109.21.3.541.508.935.508a1.16%201.16%200%200%200%201.162-1.162%201.14%201.14%200%200%200-.474-.912c.015%200%20.03-.005.045-.005.926.001%201.679.754%201.679%201.68zM3.198%204.141c0%20.152-.123.276-.276.276s-.275-.124-.275-.276.123-.276.276-.276.275.124.275.276zM1.375%208.964c0-.52.103-1.035.288-1.52.466.394%201.06.64%201.717.64%201.144%200%202.116-.725%202.499-1.738.383%201.012%201.355%201.738%202.499%201.738.867%200%201.631-.421%202.121-1.062.307.605.478%201.267.478%201.942%200%202.486-2.153%204.51-4.801%204.51s-4.801-2.023-4.801-4.51zm24.342%2019.349c-.985.498-2.267.168-3.813-.979-3.073-2.281-5.453-3.199-7.813-.705-1.315%201.391-4.163%203.365-8.423.97-3.174-1.786-2.239-6.266-1.261-9.479l.146-.492c.276-1.02.395-2.457.444-3.268a6.11%206.11%200%200%200%201.18.115%206.01%206.01%200%200%200%202.536-.562l-.006.175c-.802.215-1.848.612-2.021%201.25-.079.295.021.601.274.837.219.203.415.364.598.501-.667.304-1.243.698-1.311%201.179-.02.144-.022.507.393.787.213.144.395.26.564.365-1.285.521-1.361.96-1.381%201.126-.018.142-.011.496.427.746l.854.489c-.473.389-.971.914-.999%201.429-.018.278.095.532.316.713.675.556%201.231.721%201.653.721.059%200%20.104-.014.158-.02.207.707.641%201.64%201.513%201.64h.013c.8-.008%201.236-.345%201.462-.626.173-.216.268-.457.325-.692.424.195.93.374%201.372.374.151%200%20.294-.021.423-.068.732-.27.944-.704.993-1.021.009-.061.003-.119.002-.179.266.086.538.147.789.147.15%200%20.294-.021.423-.069.542-.2.797-.489.914-.754.237.147.478.258.704.288.106.014.205.021.296.021.356%200%20.595-.101.767-.229.438.435%201.094.992%201.656%201.067.106.014.205.021.296.021a1.56%201.56%200%200%200%20.323-.035c.17.575.453%201.289.866%201.605.358.273.665.362.914.362a.99.99%200%200%200%20.421-.093%201.03%201.03%200%200%200%20.245-.164c.168.428.39.846.68%201.068.358.273.665.362.913.362a.99.99%200%200%200%20.421-.093c.317-.148.512-.448.639-.762.251.157.495.257.726.257.127%200%20.25-.024.37-.071.427-.17.706-.617.841-1.314.022-.015.047-.022.068-.038.067-.051.133-.104.196-.159-.443%201.486-1.107%202.761-2.086%203.257zM8.66%209.925a.5.5%200%201%200-1%200c0%20.653-.818%201.205-1.787%201.205s-1.787-.552-1.787-1.205a.5.5%200%201%200-1%200c0%201.216%201.25%202.205%202.787%202.205s2.787-.989%202.787-2.205zm4.4%2015.965l-.208.097c-2.661%201.258-4.708%201.436-6.086.527-1.542-1.017-1.88-3.19-1.844-4.198a.4.4%200%200%200-.385-.414c-.242-.029-.406.164-.414.385-.046%201.249.367%203.686%202.202%204.896.708.467%201.547.7%202.51.7%201.248%200%202.706-.392%204.362-1.174l.185-.086a.4.4%200%200%200%20.205-.527c-.089-.204-.326-.291-.527-.206zM9.547%202.292c.093.077.205.114.317.114a.5.5%200%200%200%20.318-.886L8.817.397a.5.5%200%200%200-.703.068.5.5%200%200%200%20.069.703l1.364%201.124zm-7.661-.065c.086%200%20.173-.022.253-.068l1.523-.893a.5.5%200%200%200-.506-.863l-1.523.892a.5.5%200%200%200-.179.685c.094.158.261.247.432.247z%22%20transform%3D%22matrix%28-1%200%200%201%2058%200%29%22%20fill%3D%22%233bb300%22/%3E%3Cpath%20d%3D%22M.3%2021.86V10.18q0-.46.02-.68.04-.22.18-.5.28-.54%201.34-.54%201.06%200%201.42.28.38.26.44.78.76-1.04%202.38-1.04%201.64%200%203.1%201.54%201.46%201.54%201.46%203.58%200%202.04-1.46%203.58-1.44%201.54-3.08%201.54-1.64%200-2.38-.92v4.04q0%20.46-.04.68-.02.22-.18.5-.14.3-.5.42-.36.12-.98.12-.62%200-1-.12-.36-.12-.52-.4-.14-.28-.18-.5-.02-.22-.02-.68zm3.96-9.42q-.46.54-.46%201.18%200%20.64.46%201.18.48.52%201.2.52.74%200%201.24-.52.52-.52.52-1.18%200-.66-.48-1.18-.48-.54-1.26-.54-.76%200-1.22.54zm14.741-8.36q.16-.3.54-.42.38-.12%201-.12.64%200%201.02.12.38.12.52.42.16.3.18.54.04.22.04.68v11.94q0%20.46-.04.7-.02.22-.18.5-.3.54-1.7.54-1.38%200-1.54-.98-.84.96-2.34.96-1.8%200-3.28-1.56-1.48-1.58-1.48-3.66%200-2.1%201.48-3.68%201.5-1.58%203.28-1.58%201.48%200%202.3%201v-4.2q0-.46.02-.68.04-.24.18-.52zm-3.24%2010.86q.52.54%201.26.54.74%200%201.22-.54.5-.54.5-1.18%200-.66-.48-1.22-.46-.56-1.26-.56-.8%200-1.28.56-.48.54-.48%201.2%200%20.66.52%201.2zm7.833-1.2q0-2.4%201.68-3.96%201.68-1.56%203.84-1.56%202.16%200%203.82%201.56%201.66%201.54%201.66%203.94%200%201.66-.86%202.96-.86%201.28-2.1%201.9-1.22.6-2.54.6-1.32%200-2.56-.64-1.24-.66-2.1-1.92-.84-1.28-.84-2.88zm4.18%201.44q.64.48%201.3.48.66%200%201.32-.5.66-.5.66-1.48%200-.98-.62-1.46-.62-.48-1.34-.48-.72%200-1.34.5-.62.5-.62%201.48%200%20.96.64%201.46zm11.412-1.44q0%20.84.56%201.32.56.46%201.18.46.64%200%201.18-.36.56-.38.9-.38.6%200%201.46%201.06.46.58.46%201.04%200%20.76-1.1%201.42-1.14.8-2.8.8-1.86%200-3.58-1.34-.82-.64-1.34-1.7-.52-1.08-.52-2.36%200-1.3.52-2.34.52-1.06%201.34-1.7%201.66-1.32%203.54-1.32.76%200%201.48.22.72.2%201.06.4l.32.2q.36.24.56.38.52.4.52.92%200%20.5-.42%201.14-.72%201.1-1.38%201.1-.38%200-1.08-.44-.36-.34-1.04-.34-.66%200-1.24.48-.58.48-.58%201.34z%22%20fill%3D%22green%22/%3E%3C/svg%3E"/>
+        </a>
+</div>
+    </nav>
+    <main class="pdoc">
+            <section class="module-info">
+                    <h1 class="modulename">
+<a href="./../bromate.html">bromate</a><wbr>.agents    </h1>
+
+                        <div class="docstring"><p>Provide agentic features to the application.</p>
+</div>
+
+                        <input id="mod-agents-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+
+                        <label class="view-source-button" for="mod-agents-view-source"><span>View Source</span></label>
+
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="sd">&quot;&quot;&quot;Provide agentic features to the application.&quot;&quot;&quot;</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="c1"># %% IMPORTS</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="kn">import</span> <span class="nn">enum</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="kn">import</span> <span class="nn">os</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">T</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="kn">import</span> <span class="nn">google.generativeai</span> <span class="k">as</span> <span class="nn">genai</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="kn">import</span> <span class="nn">pydantic</span> <span class="k">as</span> <span class="nn">pdt</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="kn">from</span> <span class="nn">bromate</span> <span class="kn">import</span> <span class="n">types</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="c1"># %% ENUMS</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="k">class</span> <span class="nc">Role</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">StrEnum</span><span class="p">):</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Content role.&quot;&quot;&quot;</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>    <span class="n">AGENT</span> <span class="o">=</span> <span class="s2">&quot;model&quot;</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>    <span class="n">USER</span> <span class="o">=</span> <span class="s2">&quot;user&quot;</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a><span class="c1"># %% CLASSES</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a>
+</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a><span class="k">class</span> <span class="nc">AgentConfig</span><span class="p">(</span><span class="n">types</span><span class="o">.</span><span class="n">ImmutableData</span><span class="p">):</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Config for the agent.&quot;&quot;&quot;</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a>
+</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a>    <span class="n">api_key</span><span class="p">:</span> <span class="n">pdt</span><span class="o">.</span><span class="n">SecretStr</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>        <span class="n">default</span><span class="o">=</span><span class="n">pdt</span><span class="o">.</span><span class="n">SecretStr</span><span class="p">(</span><span class="n">secret_value</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;GOOGLE_API_KEY&quot;</span><span class="p">])</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a>        <span class="k">if</span> <span class="s2">&quot;GOOGLE_API_KEY&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span>
+</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a>        <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;API key of the agent platform (Google)&quot;</span><span class="p">,</span>
+</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a>    <span class="p">)</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a>        <span class="n">default</span><span class="o">=</span><span class="s2">&quot;gemini-1.5-flash-latest&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Name of the agent to use&quot;</span>
+</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a>    <span class="p">)</span>
+</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a>    <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Temperature of the agent&quot;</span><span class="p">)</span>
+</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a>    <span class="n">candidate_count</span><span class="p">:</span> <span class="n">pdt</span><span class="o">.</span><span class="n">PositiveInt</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a>        <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Number of candidates to generate&quot;</span>
+</span><span id="L-42"><a href="#L-42"><span class="linenos">42</span></a>    <span class="p">)</span>
+</span><span id="L-43"><a href="#L-43"><span class="linenos">43</span></a>    <span class="n">max_output_tokens</span><span class="p">:</span> <span class="n">pdt</span><span class="o">.</span><span class="n">PositiveInt</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="L-44"><a href="#L-44"><span class="linenos">44</span></a>        <span class="n">default</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Maximum output tokens to generate&quot;</span>
+</span><span id="L-45"><a href="#L-45"><span class="linenos">45</span></a>    <span class="p">)</span>
+</span><span id="L-46"><a href="#L-46"><span class="linenos">46</span></a>    <span class="n">system_instructions</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos">47</span></a>        <span class="n">default</span><span class="o">=</span><span class="s2">&quot;You are a browser automation system. Your goal is to understand the user request and execute actions on its browser using the tools at your disposal. After each step, you will receive a screenshot and the page source of the current browser window.&quot;</span>
+</span><span id="L-48"><a href="#L-48"><span class="linenos">48</span></a>        <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;System instructions for the agent&quot;</span><span class="p">,</span>
+</span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a>    <span class="p">)</span>
+</span><span id="L-51"><a href="#L-51"><span class="linenos">51</span></a>
+</span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a>
+</span><span id="L-53"><a href="#L-53"><span class="linenos">53</span></a><span class="c1"># %% ALIASES</span>
+</span><span id="L-54"><a href="#L-54"><span class="linenos">54</span></a>
+</span><span id="L-55"><a href="#L-55"><span class="linenos">55</span></a><span class="n">Agent</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">GenerativeModel</span>
+</span><span id="L-56"><a href="#L-56"><span class="linenos">56</span></a><span class="n">Blob</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">protos</span><span class="o">.</span><span class="n">Blob</span>
+</span><span id="L-57"><a href="#L-57"><span class="linenos">57</span></a><span class="n">Call</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">protos</span><span class="o">.</span><span class="n">FunctionCall</span>
+</span><span id="L-58"><a href="#L-58"><span class="linenos">58</span></a><span class="n">Content</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">protos</span><span class="o">.</span><span class="n">Content</span>
+</span><span id="L-59"><a href="#L-59"><span class="linenos">59</span></a><span class="n">Function</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">protos</span><span class="o">.</span><span class="n">FunctionDeclaration</span>
+</span><span id="L-60"><a href="#L-60"><span class="linenos">60</span></a><span class="n">GenerationConfig</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">GenerationConfig</span>
+</span><span id="L-61"><a href="#L-61"><span class="linenos">61</span></a><span class="n">Part</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">protos</span><span class="o">.</span><span class="n">Part</span>
+</span><span id="L-62"><a href="#L-62"><span class="linenos">62</span></a><span class="n">Response</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">GenerateContentResponse</span>
+</span><span id="L-63"><a href="#L-63"><span class="linenos">63</span></a><span class="n">Schema</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">protos</span><span class="o">.</span><span class="n">Schema</span>
+</span><span id="L-64"><a href="#L-64"><span class="linenos">64</span></a><span class="n">Structure</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">protos</span><span class="o">.</span><span class="n">FunctionResponse</span>
+</span><span id="L-65"><a href="#L-65"><span class="linenos">65</span></a><span class="n">Tool</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">protos</span><span class="o">.</span><span class="n">Tool</span>
+</span><span id="L-66"><a href="#L-66"><span class="linenos">66</span></a><span class="n">Type</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">protos</span><span class="o">.</span><span class="n">Type</span>
+</span><span id="L-67"><a href="#L-67"><span class="linenos">67</span></a>
+</span><span id="L-68"><a href="#L-68"><span class="linenos">68</span></a><span class="c1"># %% FUNCTIONS</span>
+</span><span id="L-69"><a href="#L-69"><span class="linenos">69</span></a>
+</span><span id="L-70"><a href="#L-70"><span class="linenos">70</span></a>
+</span><span id="L-71"><a href="#L-71"><span class="linenos">71</span></a><span class="k">def</span> <span class="nf">init_agent_from_config</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="n">AgentConfig</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Agent</span><span class="p">:</span>
+</span><span id="L-72"><a href="#L-72"><span class="linenos">72</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize a model from config.&quot;&quot;&quot;</span>
+</span><span id="L-73"><a href="#L-73"><span class="linenos">73</span></a>    <span class="n">api_key</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">api_key</span><span class="o">.</span><span class="n">get_secret_value</span><span class="p">()</span> <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">api_key</span> <span class="k">else</span> <span class="kc">None</span>
+</span><span id="L-74"><a href="#L-74"><span class="linenos">74</span></a>    <span class="n">genai</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>  <span class="c1"># global assignment!</span>
+</span><span id="L-75"><a href="#L-75"><span class="linenos">75</span></a>    <span class="n">gen_config</span> <span class="o">=</span> <span class="n">GenerationConfig</span><span class="p">(</span>
+</span><span id="L-76"><a href="#L-76"><span class="linenos">76</span></a>        <span class="n">temperature</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">temperature</span><span class="p">,</span>
+</span><span id="L-77"><a href="#L-77"><span class="linenos">77</span></a>        <span class="n">candidate_count</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">candidate_count</span><span class="p">,</span>
+</span><span id="L-78"><a href="#L-78"><span class="linenos">78</span></a>        <span class="n">max_output_tokens</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">max_output_tokens</span><span class="p">,</span>
+</span><span id="L-79"><a href="#L-79"><span class="linenos">79</span></a>    <span class="p">)</span>
+</span><span id="L-80"><a href="#L-80"><span class="linenos">80</span></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="L-81"><a href="#L-81"><span class="linenos">81</span></a>        <span class="n">model_name</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span><span id="L-82"><a href="#L-82"><span class="linenos">82</span></a>        <span class="n">generation_config</span><span class="o">=</span><span class="n">gen_config</span><span class="p">,</span>
+</span><span id="L-83"><a href="#L-83"><span class="linenos">83</span></a>        <span class="n">system_instruction</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">system_instructions</span><span class="p">,</span>
+</span><span id="L-84"><a href="#L-84"><span class="linenos">84</span></a>    <span class="p">)</span>
+</span><span id="L-85"><a href="#L-85"><span class="linenos">85</span></a>    <span class="k">return</span> <span class="n">model</span>
+</span></pre></div>
+
+
+            </section>
+                <section id="Role">
+                            <input id="Role-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">Role</span><wbr>(<span class="base">enum.StrEnum</span>):
+
+                <label class="view-source-button" for="Role-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Role"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Role-18"><a href="#Role-18"><span class="linenos">18</span></a><span class="k">class</span> <span class="nc">Role</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">StrEnum</span><span class="p">):</span>
+</span><span id="Role-19"><a href="#Role-19"><span class="linenos">19</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Content role.&quot;&quot;&quot;</span>
+</span><span id="Role-20"><a href="#Role-20"><span class="linenos">20</span></a>
+</span><span id="Role-21"><a href="#Role-21"><span class="linenos">21</span></a>    <span class="n">AGENT</span> <span class="o">=</span> <span class="s2">&quot;model&quot;</span>
+</span><span id="Role-22"><a href="#Role-22"><span class="linenos">22</span></a>    <span class="n">USER</span> <span class="o">=</span> <span class="s2">&quot;user&quot;</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Content role.</p>
+</div>
+
+
+                            <div id="Role.AGENT" class="classattr">
+                                <div class="attr variable">
+            <span class="name">AGENT</span>        =
+<span class="default_value">&lt;<a href="#Role.AGENT">Role.AGENT</a>: &#39;model&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Role.AGENT"></a>
+    
+    
+
+                            </div>
+                            <div id="Role.USER" class="classattr">
+                                <div class="attr variable">
+            <span class="name">USER</span>        =
+<span class="default_value">&lt;<a href="#Role.USER">Role.USER</a>: &#39;user&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Role.USER"></a>
+    
+    
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>enum.Enum</dt>
+                                <dd id="Role.name" class="variable">name</dd>
+                <dd id="Role.value" class="variable">value</dd>
+
+            </div>
+            <div><dt>builtins.str</dt>
+                                <dd id="Role.encode" class="function">encode</dd>
+                <dd id="Role.replace" class="function">replace</dd>
+                <dd id="Role.split" class="function">split</dd>
+                <dd id="Role.rsplit" class="function">rsplit</dd>
+                <dd id="Role.join" class="function">join</dd>
+                <dd id="Role.capitalize" class="function">capitalize</dd>
+                <dd id="Role.casefold" class="function">casefold</dd>
+                <dd id="Role.title" class="function">title</dd>
+                <dd id="Role.center" class="function">center</dd>
+                <dd id="Role.count" class="function">count</dd>
+                <dd id="Role.expandtabs" class="function">expandtabs</dd>
+                <dd id="Role.find" class="function">find</dd>
+                <dd id="Role.partition" class="function">partition</dd>
+                <dd id="Role.index" class="function">index</dd>
+                <dd id="Role.ljust" class="function">ljust</dd>
+                <dd id="Role.lower" class="function">lower</dd>
+                <dd id="Role.lstrip" class="function">lstrip</dd>
+                <dd id="Role.rfind" class="function">rfind</dd>
+                <dd id="Role.rindex" class="function">rindex</dd>
+                <dd id="Role.rjust" class="function">rjust</dd>
+                <dd id="Role.rstrip" class="function">rstrip</dd>
+                <dd id="Role.rpartition" class="function">rpartition</dd>
+                <dd id="Role.splitlines" class="function">splitlines</dd>
+                <dd id="Role.strip" class="function">strip</dd>
+                <dd id="Role.swapcase" class="function">swapcase</dd>
+                <dd id="Role.translate" class="function">translate</dd>
+                <dd id="Role.upper" class="function">upper</dd>
+                <dd id="Role.startswith" class="function">startswith</dd>
+                <dd id="Role.endswith" class="function">endswith</dd>
+                <dd id="Role.removeprefix" class="function">removeprefix</dd>
+                <dd id="Role.removesuffix" class="function">removesuffix</dd>
+                <dd id="Role.isascii" class="function">isascii</dd>
+                <dd id="Role.islower" class="function">islower</dd>
+                <dd id="Role.isupper" class="function">isupper</dd>
+                <dd id="Role.istitle" class="function">istitle</dd>
+                <dd id="Role.isspace" class="function">isspace</dd>
+                <dd id="Role.isdecimal" class="function">isdecimal</dd>
+                <dd id="Role.isdigit" class="function">isdigit</dd>
+                <dd id="Role.isnumeric" class="function">isnumeric</dd>
+                <dd id="Role.isalpha" class="function">isalpha</dd>
+                <dd id="Role.isalnum" class="function">isalnum</dd>
+                <dd id="Role.isidentifier" class="function">isidentifier</dd>
+                <dd id="Role.isprintable" class="function">isprintable</dd>
+                <dd id="Role.zfill" class="function">zfill</dd>
+                <dd id="Role.format" class="function">format</dd>
+                <dd id="Role.format_map" class="function">format_map</dd>
+                <dd id="Role.maketrans" class="function">maketrans</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="AgentConfig">
+                            <input id="AgentConfig-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">AgentConfig</span><wbr>(<span class="base"><a href="types.html#ImmutableData">bromate.types.ImmutableData</a></span>):
+
+                <label class="view-source-button" for="AgentConfig-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#AgentConfig"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="AgentConfig-28"><a href="#AgentConfig-28"><span class="linenos">28</span></a><span class="k">class</span> <span class="nc">AgentConfig</span><span class="p">(</span><span class="n">types</span><span class="o">.</span><span class="n">ImmutableData</span><span class="p">):</span>
+</span><span id="AgentConfig-29"><a href="#AgentConfig-29"><span class="linenos">29</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Config for the agent.&quot;&quot;&quot;</span>
+</span><span id="AgentConfig-30"><a href="#AgentConfig-30"><span class="linenos">30</span></a>
+</span><span id="AgentConfig-31"><a href="#AgentConfig-31"><span class="linenos">31</span></a>    <span class="n">api_key</span><span class="p">:</span> <span class="n">pdt</span><span class="o">.</span><span class="n">SecretStr</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="AgentConfig-32"><a href="#AgentConfig-32"><span class="linenos">32</span></a>        <span class="n">default</span><span class="o">=</span><span class="n">pdt</span><span class="o">.</span><span class="n">SecretStr</span><span class="p">(</span><span class="n">secret_value</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;GOOGLE_API_KEY&quot;</span><span class="p">])</span>
+</span><span id="AgentConfig-33"><a href="#AgentConfig-33"><span class="linenos">33</span></a>        <span class="k">if</span> <span class="s2">&quot;GOOGLE_API_KEY&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span>
+</span><span id="AgentConfig-34"><a href="#AgentConfig-34"><span class="linenos">34</span></a>        <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="AgentConfig-35"><a href="#AgentConfig-35"><span class="linenos">35</span></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;API key of the agent platform (Google)&quot;</span><span class="p">,</span>
+</span><span id="AgentConfig-36"><a href="#AgentConfig-36"><span class="linenos">36</span></a>    <span class="p">)</span>
+</span><span id="AgentConfig-37"><a href="#AgentConfig-37"><span class="linenos">37</span></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="AgentConfig-38"><a href="#AgentConfig-38"><span class="linenos">38</span></a>        <span class="n">default</span><span class="o">=</span><span class="s2">&quot;gemini-1.5-flash-latest&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Name of the agent to use&quot;</span>
+</span><span id="AgentConfig-39"><a href="#AgentConfig-39"><span class="linenos">39</span></a>    <span class="p">)</span>
+</span><span id="AgentConfig-40"><a href="#AgentConfig-40"><span class="linenos">40</span></a>    <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Temperature of the agent&quot;</span><span class="p">)</span>
+</span><span id="AgentConfig-41"><a href="#AgentConfig-41"><span class="linenos">41</span></a>    <span class="n">candidate_count</span><span class="p">:</span> <span class="n">pdt</span><span class="o">.</span><span class="n">PositiveInt</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="AgentConfig-42"><a href="#AgentConfig-42"><span class="linenos">42</span></a>        <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Number of candidates to generate&quot;</span>
+</span><span id="AgentConfig-43"><a href="#AgentConfig-43"><span class="linenos">43</span></a>    <span class="p">)</span>
+</span><span id="AgentConfig-44"><a href="#AgentConfig-44"><span class="linenos">44</span></a>    <span class="n">max_output_tokens</span><span class="p">:</span> <span class="n">pdt</span><span class="o">.</span><span class="n">PositiveInt</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="AgentConfig-45"><a href="#AgentConfig-45"><span class="linenos">45</span></a>        <span class="n">default</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Maximum output tokens to generate&quot;</span>
+</span><span id="AgentConfig-46"><a href="#AgentConfig-46"><span class="linenos">46</span></a>    <span class="p">)</span>
+</span><span id="AgentConfig-47"><a href="#AgentConfig-47"><span class="linenos">47</span></a>    <span class="n">system_instructions</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="AgentConfig-48"><a href="#AgentConfig-48"><span class="linenos">48</span></a>        <span class="n">default</span><span class="o">=</span><span class="s2">&quot;You are a browser automation system. Your goal is to understand the user request and execute actions on its browser using the tools at your disposal. After each step, you will receive a screenshot and the page source of the current browser window.&quot;</span>
+</span><span id="AgentConfig-49"><a href="#AgentConfig-49"><span class="linenos">49</span></a>        <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="AgentConfig-50"><a href="#AgentConfig-50"><span class="linenos">50</span></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;System instructions for the agent&quot;</span><span class="p">,</span>
+</span><span id="AgentConfig-51"><a href="#AgentConfig-51"><span class="linenos">51</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Config for the agent.</p>
+</div>
+
+
+                            <div id="AgentConfig.api_key" class="classattr">
+                                <div class="attr variable">
+            <span class="name">api_key</span><span class="annotation">: pydantic.types.SecretStr | None</span>
+
+        
+    </div>
+    <a class="headerlink" href="#AgentConfig.api_key"></a>
+    
+    
+
+                            </div>
+                            <div id="AgentConfig.name" class="classattr">
+                                <div class="attr variable">
+            <span class="name">name</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#AgentConfig.name"></a>
+    
+    
+
+                            </div>
+                            <div id="AgentConfig.temperature" class="classattr">
+                                <div class="attr variable">
+            <span class="name">temperature</span><span class="annotation">: float</span>
+
+        
+    </div>
+    <a class="headerlink" href="#AgentConfig.temperature"></a>
+    
+    
+
+                            </div>
+                            <div id="AgentConfig.candidate_count" class="classattr">
+                                <div class="attr variable">
+            <span class="name">candidate_count</span><span class="annotation">: Annotated[int, Gt(gt=0)]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#AgentConfig.candidate_count"></a>
+    
+    
+
+                            </div>
+                            <div id="AgentConfig.max_output_tokens" class="classattr">
+                                <div class="attr variable">
+            <span class="name">max_output_tokens</span><span class="annotation">: Annotated[int, Gt(gt=0)]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#AgentConfig.max_output_tokens"></a>
+    
+    
+
+                            </div>
+                            <div id="AgentConfig.system_instructions" class="classattr">
+                                <div class="attr variable">
+            <span class="name">system_instructions</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#AgentConfig.system_instructions"></a>
+    
+    
+
+                            </div>
+                            <div id="AgentConfig.model_config" class="classattr">
+                                <div class="attr variable">
+            <span class="name">model_config</span><span class="annotation">: ClassVar[pydantic.config.ConfigDict]</span>        =
+<span class="default_value">{&#39;extra&#39;: &#39;forbid&#39;, &#39;validate_assignment&#39;: True, &#39;frozen&#39;: True}</span>
+
+        
+    </div>
+    <a class="headerlink" href="#AgentConfig.model_config"></a>
+    
+            <div class="docstring"><p>Configuration for the model, should be a dictionary conforming to [<code>ConfigDict</code>][pydantic.config.ConfigDict].</p>
+</div>
+
+
+                            </div>
+                            <div id="AgentConfig.model_fields" class="classattr">
+                                <div class="attr variable">
+            <span class="name">model_fields</span><span class="annotation">: ClassVar[Dict[str, pydantic.fields.FieldInfo]]</span>        =
+<input id="AgentConfig.model_fields-view-value" class="view-value-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+            <label class="view-value-button pdoc-button" for="AgentConfig.model_fields-view-value"></label><span class="default_value">{&#39;api_key&#39;: FieldInfo(annotation=Union[SecretStr, NoneType], required=False, default=None, description=&#39;API key of the agent platform (Google)&#39;), &#39;name&#39;: FieldInfo(annotation=str, required=False, default=&#39;gemini-1.5-flash-latest&#39;, description=&#39;Name of the agent to use&#39;), &#39;temperature&#39;: FieldInfo(annotation=float, required=False, default=0.0, description=&#39;Temperature of the agent&#39;), &#39;candidate_count&#39;: FieldInfo(annotation=int, required=False, default=1, description=&#39;Number of candidates to generate&#39;, metadata=[Gt(gt=0)]), &#39;max_output_tokens&#39;: FieldInfo(annotation=int, required=False, default=1000, description=&#39;Maximum output tokens to generate&#39;, metadata=[Gt(gt=0)]), &#39;system_instructions&#39;: FieldInfo(annotation=str, required=False, default=&#39;You are a browser automation system. Your goal is to understand the user request and execute actions on its browser using the tools at your disposal. After each step, you will receive a screenshot and the page source of the current browser window.&#39;, description=&#39;System instructions for the agent&#39;)}</span>
+
+        
+    </div>
+    <a class="headerlink" href="#AgentConfig.model_fields"></a>
+    
+            <div class="docstring"><p>Metadata about the fields defined on the model,
+mapping of field names to [<code>FieldInfo</code>][pydantic.fields.FieldInfo] objects.</p>
+
+<p>This replaces <code>Model.__fields__</code> from Pydantic V1.</p>
+</div>
+
+
+                            </div>
+                            <div id="AgentConfig.model_computed_fields" class="classattr">
+                                <div class="attr variable">
+            <span class="name">model_computed_fields</span><span class="annotation">: ClassVar[Dict[str, pydantic.fields.ComputedFieldInfo]]</span>        =
+<span class="default_value">{}</span>
+
+        
+    </div>
+    <a class="headerlink" href="#AgentConfig.model_computed_fields"></a>
+    
+            <div class="docstring"><p>A dictionary of computed field names and their corresponding <code>ComputedFieldInfo</code> objects.</p>
+</div>
+
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>pydantic.main.BaseModel</dt>
+                                <dd id="AgentConfig.__init__" class="function">BaseModel</dd>
+                <dd id="AgentConfig.model_extra" class="variable">model_extra</dd>
+                <dd id="AgentConfig.model_fields_set" class="variable">model_fields_set</dd>
+                <dd id="AgentConfig.model_construct" class="function">model_construct</dd>
+                <dd id="AgentConfig.model_copy" class="function">model_copy</dd>
+                <dd id="AgentConfig.model_dump" class="function">model_dump</dd>
+                <dd id="AgentConfig.model_dump_json" class="function">model_dump_json</dd>
+                <dd id="AgentConfig.model_json_schema" class="function">model_json_schema</dd>
+                <dd id="AgentConfig.model_parametrized_name" class="function">model_parametrized_name</dd>
+                <dd id="AgentConfig.model_post_init" class="function">model_post_init</dd>
+                <dd id="AgentConfig.model_rebuild" class="function">model_rebuild</dd>
+                <dd id="AgentConfig.model_validate" class="function">model_validate</dd>
+                <dd id="AgentConfig.model_validate_json" class="function">model_validate_json</dd>
+                <dd id="AgentConfig.model_validate_strings" class="function">model_validate_strings</dd>
+                <dd id="AgentConfig.dict" class="function">dict</dd>
+                <dd id="AgentConfig.json" class="function">json</dd>
+                <dd id="AgentConfig.parse_obj" class="function">parse_obj</dd>
+                <dd id="AgentConfig.parse_raw" class="function">parse_raw</dd>
+                <dd id="AgentConfig.parse_file" class="function">parse_file</dd>
+                <dd id="AgentConfig.from_orm" class="function">from_orm</dd>
+                <dd id="AgentConfig.construct" class="function">construct</dd>
+                <dd id="AgentConfig.copy" class="function">copy</dd>
+                <dd id="AgentConfig.schema" class="function">schema</dd>
+                <dd id="AgentConfig.schema_json" class="function">schema_json</dd>
+                <dd id="AgentConfig.validate" class="function">validate</dd>
+                <dd id="AgentConfig.update_forward_refs" class="function">update_forward_refs</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="Agent">
+                    <div class="attr variable">
+            <span class="name">Agent</span><span class="annotation">: TypeAlias</span>        =
+<span class="default_value">google.generativeai.generative_models.GenerativeModel</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Agent"></a>
+    
+    
+
+                </section>
+                <section id="Blob">
+                            <input id="Blob-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">Blob</span><wbr>(<span class="base">proto.message.Message</span>):
+
+                <label class="view-source-button" for="Blob-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Blob"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Blob-207"><a href="#Blob-207"><span class="linenos">207</span></a><span class="k">class</span> <span class="nc">Blob</span><span class="p">(</span><span class="n">proto</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
+</span><span id="Blob-208"><a href="#Blob-208"><span class="linenos">208</span></a><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Raw media bytes.</span>
+</span><span id="Blob-209"><a href="#Blob-209"><span class="linenos">209</span></a>
+</span><span id="Blob-210"><a href="#Blob-210"><span class="linenos">210</span></a><span class="sd">    Text should not be sent as raw bytes, use the &#39;text&#39; field.</span>
+</span><span id="Blob-211"><a href="#Blob-211"><span class="linenos">211</span></a>
+</span><span id="Blob-212"><a href="#Blob-212"><span class="linenos">212</span></a><span class="sd">    Attributes:</span>
+</span><span id="Blob-213"><a href="#Blob-213"><span class="linenos">213</span></a><span class="sd">        mime_type (str):</span>
+</span><span id="Blob-214"><a href="#Blob-214"><span class="linenos">214</span></a><span class="sd">            The IANA standard MIME type of the source data. Examples:</span>
+</span><span id="Blob-215"><a href="#Blob-215"><span class="linenos">215</span></a>
+</span><span id="Blob-216"><a href="#Blob-216"><span class="linenos">216</span></a><span class="sd">            -  image/png</span>
+</span><span id="Blob-217"><a href="#Blob-217"><span class="linenos">217</span></a><span class="sd">            -  image/jpeg If an unsupported MIME type is provided, an</span>
+</span><span id="Blob-218"><a href="#Blob-218"><span class="linenos">218</span></a><span class="sd">               error will be returned. For a complete list of supported</span>
+</span><span id="Blob-219"><a href="#Blob-219"><span class="linenos">219</span></a><span class="sd">               types, see `Supported file</span>
+</span><span id="Blob-220"><a href="#Blob-220"><span class="linenos">220</span></a><span class="sd">               formats &lt;https://ai.google.dev/gemini-api/docs/prompting_with_media#supported_file_formats&gt;`__.</span>
+</span><span id="Blob-221"><a href="#Blob-221"><span class="linenos">221</span></a><span class="sd">        data (bytes):</span>
+</span><span id="Blob-222"><a href="#Blob-222"><span class="linenos">222</span></a><span class="sd">            Raw bytes for media formats.</span>
+</span><span id="Blob-223"><a href="#Blob-223"><span class="linenos">223</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="Blob-224"><a href="#Blob-224"><span class="linenos">224</span></a>
+</span><span id="Blob-225"><a href="#Blob-225"><span class="linenos">225</span></a>    <span class="n">mime_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Blob-226"><a href="#Blob-226"><span class="linenos">226</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">STRING</span><span class="p">,</span>
+</span><span id="Blob-227"><a href="#Blob-227"><span class="linenos">227</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="Blob-228"><a href="#Blob-228"><span class="linenos">228</span></a>    <span class="p">)</span>
+</span><span id="Blob-229"><a href="#Blob-229"><span class="linenos">229</span></a>    <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Blob-230"><a href="#Blob-230"><span class="linenos">230</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">BYTES</span><span class="p">,</span>
+</span><span id="Blob-231"><a href="#Blob-231"><span class="linenos">231</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+</span><span id="Blob-232"><a href="#Blob-232"><span class="linenos">232</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Raw media bytes.</p>
+
+<p>Text should not be sent as raw bytes, use the 'text' field.</p>
+
+<h6 id="attributes">Attributes:</h6>
+
+<ul>
+<li><p><strong>mime_type (str):</strong>  The IANA standard MIME type of the source data. Examples:</p>
+
+<ul>
+<li>image/png</li>
+<li>image/jpeg If an unsupported MIME type is provided, an
+error will be returned. For a complete list of supported
+types, see <a href="https://ai.google.dev/gemini-api/docs/prompting_with_media#supported_file_formats">Supported file
+formats </a>_.</li>
+</ul></li>
+<li><strong>data (bytes):</strong>  Raw bytes for media formats.</li>
+</ul>
+</div>
+
+
+                            <div id="Blob.mime_type" class="classattr">
+                                <div class="attr variable">
+            <span class="name">mime_type</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Blob.mime_type"></a>
+    
+    
+
+                            </div>
+                            <div id="Blob.data" class="classattr">
+                                <div class="attr variable">
+            <span class="name">data</span><span class="annotation">: bytes</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Blob.data"></a>
+    
+    
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>proto.message.Message</dt>
+                                <dd id="Blob.__init__" class="function">Message</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="Call">
+                    <div class="attr variable">
+            <span class="name">Call</span><span class="annotation">: TypeAlias</span>        =
+<span class="default_value">google.ai.generativelanguage_v1beta.types.content.FunctionCall</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Call"></a>
+    
+    
+
+                </section>
+                <section id="Content">
+                            <input id="Content-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">Content</span><wbr>(<span class="base">proto.message.Message</span>):
+
+                <label class="view-source-button" for="Content-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Content"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Content-77"><a href="#Content-77"><span class="linenos"> 77</span></a><span class="k">class</span> <span class="nc">Content</span><span class="p">(</span><span class="n">proto</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
+</span><span id="Content-78"><a href="#Content-78"><span class="linenos"> 78</span></a><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;The base structured datatype containing multi-part content of a</span>
+</span><span id="Content-79"><a href="#Content-79"><span class="linenos"> 79</span></a><span class="sd">    message.</span>
+</span><span id="Content-80"><a href="#Content-80"><span class="linenos"> 80</span></a>
+</span><span id="Content-81"><a href="#Content-81"><span class="linenos"> 81</span></a><span class="sd">    A ``Content`` includes a ``role`` field designating the producer of</span>
+</span><span id="Content-82"><a href="#Content-82"><span class="linenos"> 82</span></a><span class="sd">    the ``Content`` and a ``parts`` field containing multi-part data</span>
+</span><span id="Content-83"><a href="#Content-83"><span class="linenos"> 83</span></a><span class="sd">    that contains the content of the message turn.</span>
+</span><span id="Content-84"><a href="#Content-84"><span class="linenos"> 84</span></a>
+</span><span id="Content-85"><a href="#Content-85"><span class="linenos"> 85</span></a><span class="sd">    Attributes:</span>
+</span><span id="Content-86"><a href="#Content-86"><span class="linenos"> 86</span></a><span class="sd">        parts (MutableSequence[google.ai.generativelanguage_v1beta.types.Part]):</span>
+</span><span id="Content-87"><a href="#Content-87"><span class="linenos"> 87</span></a><span class="sd">            Ordered ``Parts`` that constitute a single message. Parts</span>
+</span><span id="Content-88"><a href="#Content-88"><span class="linenos"> 88</span></a><span class="sd">            may have different MIME types.</span>
+</span><span id="Content-89"><a href="#Content-89"><span class="linenos"> 89</span></a><span class="sd">        role (str):</span>
+</span><span id="Content-90"><a href="#Content-90"><span class="linenos"> 90</span></a><span class="sd">            Optional. The producer of the content. Must</span>
+</span><span id="Content-91"><a href="#Content-91"><span class="linenos"> 91</span></a><span class="sd">            be either &#39;user&#39; or &#39;model&#39;.</span>
+</span><span id="Content-92"><a href="#Content-92"><span class="linenos"> 92</span></a><span class="sd">            Useful to set for multi-turn conversations,</span>
+</span><span id="Content-93"><a href="#Content-93"><span class="linenos"> 93</span></a><span class="sd">            otherwise can be left blank or unset.</span>
+</span><span id="Content-94"><a href="#Content-94"><span class="linenos"> 94</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="Content-95"><a href="#Content-95"><span class="linenos"> 95</span></a>
+</span><span id="Content-96"><a href="#Content-96"><span class="linenos"> 96</span></a>    <span class="n">parts</span><span class="p">:</span> <span class="n">MutableSequence</span><span class="p">[</span><span class="s2">&quot;Part&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">RepeatedField</span><span class="p">(</span>
+</span><span id="Content-97"><a href="#Content-97"><span class="linenos"> 97</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">MESSAGE</span><span class="p">,</span>
+</span><span id="Content-98"><a href="#Content-98"><span class="linenos"> 98</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="Content-99"><a href="#Content-99"><span class="linenos"> 99</span></a>        <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Part&quot;</span><span class="p">,</span>
+</span><span id="Content-100"><a href="#Content-100"><span class="linenos">100</span></a>    <span class="p">)</span>
+</span><span id="Content-101"><a href="#Content-101"><span class="linenos">101</span></a>    <span class="n">role</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Content-102"><a href="#Content-102"><span class="linenos">102</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">STRING</span><span class="p">,</span>
+</span><span id="Content-103"><a href="#Content-103"><span class="linenos">103</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+</span><span id="Content-104"><a href="#Content-104"><span class="linenos">104</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>The base structured datatype containing multi-part content of a
+message.</p>
+
+<p>A <code><a href="#Content">Content</a></code> includes a <code><a href="#Content.role">role</a></code> field designating the producer of
+the <code><a href="#Content">Content</a></code> and a <code><a href="#Content.parts">parts</a></code> field containing multi-part data
+that contains the content of the message turn.</p>
+
+<h6 id="attributes">Attributes:</h6>
+
+<ul>
+<li><strong>parts (MutableSequence[google.ai.generativelanguage_v1beta.types.Part]):</strong>  Ordered <code>Parts</code> that constitute a single message. Parts
+may have different MIME types.</li>
+<li><strong>role (str):</strong>  Optional. The producer of the content. Must
+be either 'user' or 'model'.
+Useful to set for multi-turn conversations,
+otherwise can be left blank or unset.</li>
+</ul>
+</div>
+
+
+                            <div id="Content.parts" class="classattr">
+                                <div class="attr variable">
+            <span class="name">parts</span><span class="annotation">: MutableSequence[google.ai.generativelanguage_v1beta.types.content.Part]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Content.parts"></a>
+    
+    
+
+                            </div>
+                            <div id="Content.role" class="classattr">
+                                <div class="attr variable">
+            <span class="name">role</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Content.role"></a>
+    
+    
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>proto.message.Message</dt>
+                                <dd id="Content.__init__" class="function">Message</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="Function">
+                    <div class="attr variable">
+            <span class="name">Function</span><span class="annotation">: TypeAlias</span>        =
+<span class="default_value">google.ai.generativelanguage_v1beta.types.content.FunctionDeclaration</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Function"></a>
+    
+    
+
+                </section>
+                <section id="GenerationConfig">
+                            <input id="GenerationConfig-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+                    <div class="decorator">@dataclasses.dataclass</div>
+
+    <span class="def">class</span>
+    <span class="name">GenerationConfig</span>:
+
+                <label class="view-source-button" for="GenerationConfig-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#GenerationConfig"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="GenerationConfig-92"><a href="#GenerationConfig-92"><span class="linenos"> 92</span></a><span class="nd">@dataclasses</span><span class="o">.</span><span class="n">dataclass</span>
+</span><span id="GenerationConfig-93"><a href="#GenerationConfig-93"><span class="linenos"> 93</span></a><span class="k">class</span> <span class="nc">GenerationConfig</span><span class="p">:</span>
+</span><span id="GenerationConfig-94"><a href="#GenerationConfig-94"><span class="linenos"> 94</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A simple dataclass used to configure the generation parameters of `GenerativeModel.generate_content`.</span>
+</span><span id="GenerationConfig-95"><a href="#GenerationConfig-95"><span class="linenos"> 95</span></a>
+</span><span id="GenerationConfig-96"><a href="#GenerationConfig-96"><span class="linenos"> 96</span></a><span class="sd">    Attributes:</span>
+</span><span id="GenerationConfig-97"><a href="#GenerationConfig-97"><span class="linenos"> 97</span></a><span class="sd">        candidate_count:</span>
+</span><span id="GenerationConfig-98"><a href="#GenerationConfig-98"><span class="linenos"> 98</span></a><span class="sd">            Number of generated responses to return.</span>
+</span><span id="GenerationConfig-99"><a href="#GenerationConfig-99"><span class="linenos"> 99</span></a><span class="sd">        stop_sequences:</span>
+</span><span id="GenerationConfig-100"><a href="#GenerationConfig-100"><span class="linenos">100</span></a><span class="sd">            The set of character sequences (up</span>
+</span><span id="GenerationConfig-101"><a href="#GenerationConfig-101"><span class="linenos">101</span></a><span class="sd">            to 5) that will stop output generation. If</span>
+</span><span id="GenerationConfig-102"><a href="#GenerationConfig-102"><span class="linenos">102</span></a><span class="sd">            specified, the API will stop at the first</span>
+</span><span id="GenerationConfig-103"><a href="#GenerationConfig-103"><span class="linenos">103</span></a><span class="sd">            appearance of a stop sequence. The stop sequence</span>
+</span><span id="GenerationConfig-104"><a href="#GenerationConfig-104"><span class="linenos">104</span></a><span class="sd">            will not be included as part of the response.</span>
+</span><span id="GenerationConfig-105"><a href="#GenerationConfig-105"><span class="linenos">105</span></a><span class="sd">        max_output_tokens:</span>
+</span><span id="GenerationConfig-106"><a href="#GenerationConfig-106"><span class="linenos">106</span></a><span class="sd">            The maximum number of tokens to include in a</span>
+</span><span id="GenerationConfig-107"><a href="#GenerationConfig-107"><span class="linenos">107</span></a><span class="sd">            candidate.</span>
+</span><span id="GenerationConfig-108"><a href="#GenerationConfig-108"><span class="linenos">108</span></a>
+</span><span id="GenerationConfig-109"><a href="#GenerationConfig-109"><span class="linenos">109</span></a><span class="sd">            If unset, this will default to output_token_limit specified</span>
+</span><span id="GenerationConfig-110"><a href="#GenerationConfig-110"><span class="linenos">110</span></a><span class="sd">            in the model&#39;s specification.</span>
+</span><span id="GenerationConfig-111"><a href="#GenerationConfig-111"><span class="linenos">111</span></a><span class="sd">        temperature:</span>
+</span><span id="GenerationConfig-112"><a href="#GenerationConfig-112"><span class="linenos">112</span></a><span class="sd">            Controls the randomness of the output. Note: The</span>
+</span><span id="GenerationConfig-113"><a href="#GenerationConfig-113"><span class="linenos">113</span></a><span class="sd">            default value varies by model, see the `Model.temperature`</span>
+</span><span id="GenerationConfig-114"><a href="#GenerationConfig-114"><span class="linenos">114</span></a><span class="sd">            attribute of the `Model` returned the `genai.get_model`</span>
+</span><span id="GenerationConfig-115"><a href="#GenerationConfig-115"><span class="linenos">115</span></a><span class="sd">            function.</span>
+</span><span id="GenerationConfig-116"><a href="#GenerationConfig-116"><span class="linenos">116</span></a>
+</span><span id="GenerationConfig-117"><a href="#GenerationConfig-117"><span class="linenos">117</span></a><span class="sd">            Values can range from [0.0,1.0], inclusive. A value closer</span>
+</span><span id="GenerationConfig-118"><a href="#GenerationConfig-118"><span class="linenos">118</span></a><span class="sd">            to 1.0 will produce responses that are more varied and</span>
+</span><span id="GenerationConfig-119"><a href="#GenerationConfig-119"><span class="linenos">119</span></a><span class="sd">            creative, while a value closer to 0.0 will typically result</span>
+</span><span id="GenerationConfig-120"><a href="#GenerationConfig-120"><span class="linenos">120</span></a><span class="sd">            in more straightforward responses from the model.</span>
+</span><span id="GenerationConfig-121"><a href="#GenerationConfig-121"><span class="linenos">121</span></a><span class="sd">        top_p:</span>
+</span><span id="GenerationConfig-122"><a href="#GenerationConfig-122"><span class="linenos">122</span></a><span class="sd">            Optional. The maximum cumulative probability of tokens to</span>
+</span><span id="GenerationConfig-123"><a href="#GenerationConfig-123"><span class="linenos">123</span></a><span class="sd">            consider when sampling.</span>
+</span><span id="GenerationConfig-124"><a href="#GenerationConfig-124"><span class="linenos">124</span></a>
+</span><span id="GenerationConfig-125"><a href="#GenerationConfig-125"><span class="linenos">125</span></a><span class="sd">            The model uses combined Top-k and nucleus sampling.</span>
+</span><span id="GenerationConfig-126"><a href="#GenerationConfig-126"><span class="linenos">126</span></a>
+</span><span id="GenerationConfig-127"><a href="#GenerationConfig-127"><span class="linenos">127</span></a><span class="sd">            Tokens are sorted based on their assigned probabilities so</span>
+</span><span id="GenerationConfig-128"><a href="#GenerationConfig-128"><span class="linenos">128</span></a><span class="sd">            that only the most likely tokens are considered. Top-k</span>
+</span><span id="GenerationConfig-129"><a href="#GenerationConfig-129"><span class="linenos">129</span></a><span class="sd">            sampling directly limits the maximum number of tokens to</span>
+</span><span id="GenerationConfig-130"><a href="#GenerationConfig-130"><span class="linenos">130</span></a><span class="sd">            consider, while Nucleus sampling limits number of tokens</span>
+</span><span id="GenerationConfig-131"><a href="#GenerationConfig-131"><span class="linenos">131</span></a><span class="sd">            based on the cumulative probability.</span>
+</span><span id="GenerationConfig-132"><a href="#GenerationConfig-132"><span class="linenos">132</span></a>
+</span><span id="GenerationConfig-133"><a href="#GenerationConfig-133"><span class="linenos">133</span></a><span class="sd">            Note: The default value varies by model, see the</span>
+</span><span id="GenerationConfig-134"><a href="#GenerationConfig-134"><span class="linenos">134</span></a><span class="sd">            `Model.top_p` attribute of the `Model` returned the</span>
+</span><span id="GenerationConfig-135"><a href="#GenerationConfig-135"><span class="linenos">135</span></a><span class="sd">            `genai.get_model` function.</span>
+</span><span id="GenerationConfig-136"><a href="#GenerationConfig-136"><span class="linenos">136</span></a>
+</span><span id="GenerationConfig-137"><a href="#GenerationConfig-137"><span class="linenos">137</span></a><span class="sd">        top_k (int):</span>
+</span><span id="GenerationConfig-138"><a href="#GenerationConfig-138"><span class="linenos">138</span></a><span class="sd">            Optional. The maximum number of tokens to consider when</span>
+</span><span id="GenerationConfig-139"><a href="#GenerationConfig-139"><span class="linenos">139</span></a><span class="sd">            sampling.</span>
+</span><span id="GenerationConfig-140"><a href="#GenerationConfig-140"><span class="linenos">140</span></a>
+</span><span id="GenerationConfig-141"><a href="#GenerationConfig-141"><span class="linenos">141</span></a><span class="sd">            The model uses combined Top-k and nucleus sampling.</span>
+</span><span id="GenerationConfig-142"><a href="#GenerationConfig-142"><span class="linenos">142</span></a>
+</span><span id="GenerationConfig-143"><a href="#GenerationConfig-143"><span class="linenos">143</span></a><span class="sd">            Top-k sampling considers the set of `top_k` most probable</span>
+</span><span id="GenerationConfig-144"><a href="#GenerationConfig-144"><span class="linenos">144</span></a><span class="sd">            tokens. Defaults to 40.</span>
+</span><span id="GenerationConfig-145"><a href="#GenerationConfig-145"><span class="linenos">145</span></a>
+</span><span id="GenerationConfig-146"><a href="#GenerationConfig-146"><span class="linenos">146</span></a><span class="sd">            Note: The default value varies by model, see the</span>
+</span><span id="GenerationConfig-147"><a href="#GenerationConfig-147"><span class="linenos">147</span></a><span class="sd">            `Model.top_k` attribute of the `Model` returned the</span>
+</span><span id="GenerationConfig-148"><a href="#GenerationConfig-148"><span class="linenos">148</span></a><span class="sd">            `genai.get_model` function.</span>
+</span><span id="GenerationConfig-149"><a href="#GenerationConfig-149"><span class="linenos">149</span></a>
+</span><span id="GenerationConfig-150"><a href="#GenerationConfig-150"><span class="linenos">150</span></a><span class="sd">        response_mime_type:</span>
+</span><span id="GenerationConfig-151"><a href="#GenerationConfig-151"><span class="linenos">151</span></a><span class="sd">            Optional. Output response mimetype of the generated candidate text.</span>
+</span><span id="GenerationConfig-152"><a href="#GenerationConfig-152"><span class="linenos">152</span></a>
+</span><span id="GenerationConfig-153"><a href="#GenerationConfig-153"><span class="linenos">153</span></a><span class="sd">            Supported mimetype:</span>
+</span><span id="GenerationConfig-154"><a href="#GenerationConfig-154"><span class="linenos">154</span></a><span class="sd">                `text/plain`: (default) Text output.</span>
+</span><span id="GenerationConfig-155"><a href="#GenerationConfig-155"><span class="linenos">155</span></a><span class="sd">                `application/json`: JSON response in the candidates.</span>
+</span><span id="GenerationConfig-156"><a href="#GenerationConfig-156"><span class="linenos">156</span></a>
+</span><span id="GenerationConfig-157"><a href="#GenerationConfig-157"><span class="linenos">157</span></a><span class="sd">        response_schema:</span>
+</span><span id="GenerationConfig-158"><a href="#GenerationConfig-158"><span class="linenos">158</span></a><span class="sd">            Optional. Specifies the format of the JSON requested if response_mime_type is</span>
+</span><span id="GenerationConfig-159"><a href="#GenerationConfig-159"><span class="linenos">159</span></a><span class="sd">            `application/json`.</span>
+</span><span id="GenerationConfig-160"><a href="#GenerationConfig-160"><span class="linenos">160</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="GenerationConfig-161"><a href="#GenerationConfig-161"><span class="linenos">161</span></a>
+</span><span id="GenerationConfig-162"><a href="#GenerationConfig-162"><span class="linenos">162</span></a>    <span class="n">candidate_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="GenerationConfig-163"><a href="#GenerationConfig-163"><span class="linenos">163</span></a>    <span class="n">stop_sequences</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="GenerationConfig-164"><a href="#GenerationConfig-164"><span class="linenos">164</span></a>    <span class="n">max_output_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="GenerationConfig-165"><a href="#GenerationConfig-165"><span class="linenos">165</span></a>    <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="GenerationConfig-166"><a href="#GenerationConfig-166"><span class="linenos">166</span></a>    <span class="n">top_p</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="GenerationConfig-167"><a href="#GenerationConfig-167"><span class="linenos">167</span></a>    <span class="n">top_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="GenerationConfig-168"><a href="#GenerationConfig-168"><span class="linenos">168</span></a>    <span class="n">response_mime_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="GenerationConfig-169"><a href="#GenerationConfig-169"><span class="linenos">169</span></a>    <span class="n">response_schema</span><span class="p">:</span> <span class="n">protos</span><span class="o">.</span><span class="n">Schema</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>A simple dataclass used to configure the generation parameters of <code>GenerativeModel.generate_content</code>.</p>
+
+<h6 id="attributes">Attributes:</h6>
+
+<ul>
+<li><strong>candidate_count:</strong>  Number of generated responses to return.</li>
+<li><strong>stop_sequences:</strong>  The set of character sequences (up
+to 5) that will stop output generation. If
+specified, the API will stop at the first
+appearance of a stop sequence. The stop sequence
+will not be included as part of the response.</li>
+<li><p><strong>max_output_tokens:</strong>  The maximum number of tokens to include in a
+candidate.</p>
+
+<p>If unset, this will default to output_token_limit specified
+in the model's specification.</p></li>
+<li><p><strong>temperature:</strong>  Controls the randomness of the output. Note: The
+default value varies by model, see the <code>Model.temperature</code>
+attribute of the <code>Model</code> returned the <code>genai.get_model</code>
+function.</p>
+
+<p>Values can range from [0.0,1.0], inclusive. A value closer
+to 1.0 will produce responses that are more varied and
+creative, while a value closer to 0.0 will typically result
+in more straightforward responses from the model.</p></li>
+<li><p><strong>top_p:</strong>  Optional. The maximum cumulative probability of tokens to
+consider when sampling.</p>
+
+<p>The model uses combined Top-k and nucleus sampling.</p>
+
+<p>Tokens are sorted based on their assigned probabilities so
+that only the most likely tokens are considered. Top-k
+sampling directly limits the maximum number of tokens to
+consider, while Nucleus sampling limits number of tokens
+based on the cumulative probability.</p>
+
+<p>Note: The default value varies by model, see the
+<code>Model.top_p</code> attribute of the <code>Model</code> returned the
+<code>genai.get_model</code> function.</p></li>
+<li><p><strong>top_k (int):</strong>  Optional. The maximum number of tokens to consider when
+sampling.</p>
+
+<p>The model uses combined Top-k and nucleus sampling.</p>
+
+<p>Top-k sampling considers the set of <code><a href="#GenerationConfig.top_k">top_k</a></code> most probable
+tokens. Defaults to 40.</p>
+
+<p>Note: The default value varies by model, see the
+<code>Model.top_k</code> attribute of the <code>Model</code> returned the
+<code>genai.get_model</code> function.</p></li>
+<li><p><strong>response_mime_type:</strong>  Optional. Output response mimetype of the generated candidate text.</p>
+
+<p>Supported mimetype:
+    <code>text/plain</code>: (default) Text output.
+    <code>application/json</code>: JSON response in the candidates.</p></li>
+<li><strong>response_schema:</strong>  Optional. Specifies the format of the JSON requested if response_mime_type is
+<code>application/json</code>.</li>
+</ul>
+</div>
+
+
+                            <div id="GenerationConfig.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">GenerationConfig</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">candidate_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">stop_sequences</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">max_output_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">top_p</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">top_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">response_mime_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">response_schema</span><span class="p">:</span> <span class="n">google</span><span class="o">.</span><span class="n">ai</span><span class="o">.</span><span class="n">generativelanguage_v1beta</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">Schema</span> <span class="o">|</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#GenerationConfig.__init__"></a>
+    
+    
+
+                            </div>
+                            <div id="GenerationConfig.candidate_count" class="classattr">
+                                <div class="attr variable">
+            <span class="name">candidate_count</span><span class="annotation">: int | None</span>        =
+<span class="default_value">None</span>
+
+        
+    </div>
+    <a class="headerlink" href="#GenerationConfig.candidate_count"></a>
+    
+    
+
+                            </div>
+                            <div id="GenerationConfig.stop_sequences" class="classattr">
+                                <div class="attr variable">
+            <span class="name">stop_sequences</span><span class="annotation">: collections.abc.Iterable[str] | None</span>        =
+<span class="default_value">None</span>
+
+        
+    </div>
+    <a class="headerlink" href="#GenerationConfig.stop_sequences"></a>
+    
+    
+
+                            </div>
+                            <div id="GenerationConfig.max_output_tokens" class="classattr">
+                                <div class="attr variable">
+            <span class="name">max_output_tokens</span><span class="annotation">: int | None</span>        =
+<span class="default_value">None</span>
+
+        
+    </div>
+    <a class="headerlink" href="#GenerationConfig.max_output_tokens"></a>
+    
+    
+
+                            </div>
+                            <div id="GenerationConfig.temperature" class="classattr">
+                                <div class="attr variable">
+            <span class="name">temperature</span><span class="annotation">: float | None</span>        =
+<span class="default_value">None</span>
+
+        
+    </div>
+    <a class="headerlink" href="#GenerationConfig.temperature"></a>
+    
+    
+
+                            </div>
+                            <div id="GenerationConfig.top_p" class="classattr">
+                                <div class="attr variable">
+            <span class="name">top_p</span><span class="annotation">: float | None</span>        =
+<span class="default_value">None</span>
+
+        
+    </div>
+    <a class="headerlink" href="#GenerationConfig.top_p"></a>
+    
+    
+
+                            </div>
+                            <div id="GenerationConfig.top_k" class="classattr">
+                                <div class="attr variable">
+            <span class="name">top_k</span><span class="annotation">: int | None</span>        =
+<span class="default_value">None</span>
+
+        
+    </div>
+    <a class="headerlink" href="#GenerationConfig.top_k"></a>
+    
+    
+
+                            </div>
+                            <div id="GenerationConfig.response_mime_type" class="classattr">
+                                <div class="attr variable">
+            <span class="name">response_mime_type</span><span class="annotation">: str | None</span>        =
+<span class="default_value">None</span>
+
+        
+    </div>
+    <a class="headerlink" href="#GenerationConfig.response_mime_type"></a>
+    
+    
+
+                            </div>
+                            <div id="GenerationConfig.response_schema" class="classattr">
+                                <div class="attr variable">
+            <span class="name">response_schema</span><span class="annotation">: google.ai.generativelanguage_v1beta.types.content.Schema | collections.abc.Mapping[str, typing.Any] | None</span>        =
+<span class="default_value">None</span>
+
+        
+    </div>
+    <a class="headerlink" href="#GenerationConfig.response_schema"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="Part">
+                            <input id="Part-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">Part</span><wbr>(<span class="base">proto.message.Message</span>):
+
+                <label class="view-source-button" for="Part-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Part"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Part-107"><a href="#Part-107"><span class="linenos">107</span></a><span class="k">class</span> <span class="nc">Part</span><span class="p">(</span><span class="n">proto</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
+</span><span id="Part-108"><a href="#Part-108"><span class="linenos">108</span></a><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A datatype containing media that is part of a multi-part ``Content``</span>
+</span><span id="Part-109"><a href="#Part-109"><span class="linenos">109</span></a><span class="sd">    message.</span>
+</span><span id="Part-110"><a href="#Part-110"><span class="linenos">110</span></a>
+</span><span id="Part-111"><a href="#Part-111"><span class="linenos">111</span></a><span class="sd">    A ``Part`` consists of data which has an associated datatype. A</span>
+</span><span id="Part-112"><a href="#Part-112"><span class="linenos">112</span></a><span class="sd">    ``Part`` can only contain one of the accepted types in</span>
+</span><span id="Part-113"><a href="#Part-113"><span class="linenos">113</span></a><span class="sd">    ``Part.data``.</span>
+</span><span id="Part-114"><a href="#Part-114"><span class="linenos">114</span></a>
+</span><span id="Part-115"><a href="#Part-115"><span class="linenos">115</span></a><span class="sd">    A ``Part`` must have a fixed IANA MIME type identifying the type and</span>
+</span><span id="Part-116"><a href="#Part-116"><span class="linenos">116</span></a><span class="sd">    subtype of the media if the ``inline_data`` field is filled with raw</span>
+</span><span id="Part-117"><a href="#Part-117"><span class="linenos">117</span></a><span class="sd">    bytes.</span>
+</span><span id="Part-118"><a href="#Part-118"><span class="linenos">118</span></a>
+</span><span id="Part-119"><a href="#Part-119"><span class="linenos">119</span></a><span class="sd">    This message has `oneof`_ fields (mutually exclusive fields).</span>
+</span><span id="Part-120"><a href="#Part-120"><span class="linenos">120</span></a><span class="sd">    For each oneof, at most one member field can be set at the same time.</span>
+</span><span id="Part-121"><a href="#Part-121"><span class="linenos">121</span></a><span class="sd">    Setting any member of the oneof automatically clears all other</span>
+</span><span id="Part-122"><a href="#Part-122"><span class="linenos">122</span></a><span class="sd">    members.</span>
+</span><span id="Part-123"><a href="#Part-123"><span class="linenos">123</span></a>
+</span><span id="Part-124"><a href="#Part-124"><span class="linenos">124</span></a><span class="sd">    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields</span>
+</span><span id="Part-125"><a href="#Part-125"><span class="linenos">125</span></a>
+</span><span id="Part-126"><a href="#Part-126"><span class="linenos">126</span></a><span class="sd">    Attributes:</span>
+</span><span id="Part-127"><a href="#Part-127"><span class="linenos">127</span></a><span class="sd">        text (str):</span>
+</span><span id="Part-128"><a href="#Part-128"><span class="linenos">128</span></a><span class="sd">            Inline text.</span>
+</span><span id="Part-129"><a href="#Part-129"><span class="linenos">129</span></a>
+</span><span id="Part-130"><a href="#Part-130"><span class="linenos">130</span></a><span class="sd">            This field is a member of `oneof`_ ``data``.</span>
+</span><span id="Part-131"><a href="#Part-131"><span class="linenos">131</span></a><span class="sd">        inline_data (google.ai.generativelanguage_v1beta.types.Blob):</span>
+</span><span id="Part-132"><a href="#Part-132"><span class="linenos">132</span></a><span class="sd">            Inline media bytes.</span>
+</span><span id="Part-133"><a href="#Part-133"><span class="linenos">133</span></a>
+</span><span id="Part-134"><a href="#Part-134"><span class="linenos">134</span></a><span class="sd">            This field is a member of `oneof`_ ``data``.</span>
+</span><span id="Part-135"><a href="#Part-135"><span class="linenos">135</span></a><span class="sd">        function_call (google.ai.generativelanguage_v1beta.types.FunctionCall):</span>
+</span><span id="Part-136"><a href="#Part-136"><span class="linenos">136</span></a><span class="sd">            A predicted ``FunctionCall`` returned from the model that</span>
+</span><span id="Part-137"><a href="#Part-137"><span class="linenos">137</span></a><span class="sd">            contains a string representing the</span>
+</span><span id="Part-138"><a href="#Part-138"><span class="linenos">138</span></a><span class="sd">            ``FunctionDeclaration.name`` with the arguments and their</span>
+</span><span id="Part-139"><a href="#Part-139"><span class="linenos">139</span></a><span class="sd">            values.</span>
+</span><span id="Part-140"><a href="#Part-140"><span class="linenos">140</span></a>
+</span><span id="Part-141"><a href="#Part-141"><span class="linenos">141</span></a><span class="sd">            This field is a member of `oneof`_ ``data``.</span>
+</span><span id="Part-142"><a href="#Part-142"><span class="linenos">142</span></a><span class="sd">        function_response (google.ai.generativelanguage_v1beta.types.FunctionResponse):</span>
+</span><span id="Part-143"><a href="#Part-143"><span class="linenos">143</span></a><span class="sd">            The result output of a ``FunctionCall`` that contains a</span>
+</span><span id="Part-144"><a href="#Part-144"><span class="linenos">144</span></a><span class="sd">            string representing the ``FunctionDeclaration.name`` and a</span>
+</span><span id="Part-145"><a href="#Part-145"><span class="linenos">145</span></a><span class="sd">            structured JSON object containing any output from the</span>
+</span><span id="Part-146"><a href="#Part-146"><span class="linenos">146</span></a><span class="sd">            function is used as context to the model.</span>
+</span><span id="Part-147"><a href="#Part-147"><span class="linenos">147</span></a>
+</span><span id="Part-148"><a href="#Part-148"><span class="linenos">148</span></a><span class="sd">            This field is a member of `oneof`_ ``data``.</span>
+</span><span id="Part-149"><a href="#Part-149"><span class="linenos">149</span></a><span class="sd">        file_data (google.ai.generativelanguage_v1beta.types.FileData):</span>
+</span><span id="Part-150"><a href="#Part-150"><span class="linenos">150</span></a><span class="sd">            URI based data.</span>
+</span><span id="Part-151"><a href="#Part-151"><span class="linenos">151</span></a>
+</span><span id="Part-152"><a href="#Part-152"><span class="linenos">152</span></a><span class="sd">            This field is a member of `oneof`_ ``data``.</span>
+</span><span id="Part-153"><a href="#Part-153"><span class="linenos">153</span></a><span class="sd">        executable_code (google.ai.generativelanguage_v1beta.types.ExecutableCode):</span>
+</span><span id="Part-154"><a href="#Part-154"><span class="linenos">154</span></a><span class="sd">            Code generated by the model that is meant to</span>
+</span><span id="Part-155"><a href="#Part-155"><span class="linenos">155</span></a><span class="sd">            be executed.</span>
+</span><span id="Part-156"><a href="#Part-156"><span class="linenos">156</span></a>
+</span><span id="Part-157"><a href="#Part-157"><span class="linenos">157</span></a><span class="sd">            This field is a member of `oneof`_ ``data``.</span>
+</span><span id="Part-158"><a href="#Part-158"><span class="linenos">158</span></a><span class="sd">        code_execution_result (google.ai.generativelanguage_v1beta.types.CodeExecutionResult):</span>
+</span><span id="Part-159"><a href="#Part-159"><span class="linenos">159</span></a><span class="sd">            Result of executing the ``ExecutableCode``.</span>
+</span><span id="Part-160"><a href="#Part-160"><span class="linenos">160</span></a>
+</span><span id="Part-161"><a href="#Part-161"><span class="linenos">161</span></a><span class="sd">            This field is a member of `oneof`_ ``data``.</span>
+</span><span id="Part-162"><a href="#Part-162"><span class="linenos">162</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="Part-163"><a href="#Part-163"><span class="linenos">163</span></a>
+</span><span id="Part-164"><a href="#Part-164"><span class="linenos">164</span></a>    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Part-165"><a href="#Part-165"><span class="linenos">165</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">STRING</span><span class="p">,</span>
+</span><span id="Part-166"><a href="#Part-166"><span class="linenos">166</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+</span><span id="Part-167"><a href="#Part-167"><span class="linenos">167</span></a>        <span class="n">oneof</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+</span><span id="Part-168"><a href="#Part-168"><span class="linenos">168</span></a>    <span class="p">)</span>
+</span><span id="Part-169"><a href="#Part-169"><span class="linenos">169</span></a>    <span class="n">inline_data</span><span class="p">:</span> <span class="s2">&quot;Blob&quot;</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Part-170"><a href="#Part-170"><span class="linenos">170</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">MESSAGE</span><span class="p">,</span>
+</span><span id="Part-171"><a href="#Part-171"><span class="linenos">171</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+</span><span id="Part-172"><a href="#Part-172"><span class="linenos">172</span></a>        <span class="n">oneof</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+</span><span id="Part-173"><a href="#Part-173"><span class="linenos">173</span></a>        <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Blob&quot;</span><span class="p">,</span>
+</span><span id="Part-174"><a href="#Part-174"><span class="linenos">174</span></a>    <span class="p">)</span>
+</span><span id="Part-175"><a href="#Part-175"><span class="linenos">175</span></a>    <span class="n">function_call</span><span class="p">:</span> <span class="s2">&quot;FunctionCall&quot;</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Part-176"><a href="#Part-176"><span class="linenos">176</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">MESSAGE</span><span class="p">,</span>
+</span><span id="Part-177"><a href="#Part-177"><span class="linenos">177</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+</span><span id="Part-178"><a href="#Part-178"><span class="linenos">178</span></a>        <span class="n">oneof</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+</span><span id="Part-179"><a href="#Part-179"><span class="linenos">179</span></a>        <span class="n">message</span><span class="o">=</span><span class="s2">&quot;FunctionCall&quot;</span><span class="p">,</span>
+</span><span id="Part-180"><a href="#Part-180"><span class="linenos">180</span></a>    <span class="p">)</span>
+</span><span id="Part-181"><a href="#Part-181"><span class="linenos">181</span></a>    <span class="n">function_response</span><span class="p">:</span> <span class="s2">&quot;FunctionResponse&quot;</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Part-182"><a href="#Part-182"><span class="linenos">182</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">MESSAGE</span><span class="p">,</span>
+</span><span id="Part-183"><a href="#Part-183"><span class="linenos">183</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+</span><span id="Part-184"><a href="#Part-184"><span class="linenos">184</span></a>        <span class="n">oneof</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+</span><span id="Part-185"><a href="#Part-185"><span class="linenos">185</span></a>        <span class="n">message</span><span class="o">=</span><span class="s2">&quot;FunctionResponse&quot;</span><span class="p">,</span>
+</span><span id="Part-186"><a href="#Part-186"><span class="linenos">186</span></a>    <span class="p">)</span>
+</span><span id="Part-187"><a href="#Part-187"><span class="linenos">187</span></a>    <span class="n">file_data</span><span class="p">:</span> <span class="s2">&quot;FileData&quot;</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Part-188"><a href="#Part-188"><span class="linenos">188</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">MESSAGE</span><span class="p">,</span>
+</span><span id="Part-189"><a href="#Part-189"><span class="linenos">189</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+</span><span id="Part-190"><a href="#Part-190"><span class="linenos">190</span></a>        <span class="n">oneof</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+</span><span id="Part-191"><a href="#Part-191"><span class="linenos">191</span></a>        <span class="n">message</span><span class="o">=</span><span class="s2">&quot;FileData&quot;</span><span class="p">,</span>
+</span><span id="Part-192"><a href="#Part-192"><span class="linenos">192</span></a>    <span class="p">)</span>
+</span><span id="Part-193"><a href="#Part-193"><span class="linenos">193</span></a>    <span class="n">executable_code</span><span class="p">:</span> <span class="s2">&quot;ExecutableCode&quot;</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Part-194"><a href="#Part-194"><span class="linenos">194</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">MESSAGE</span><span class="p">,</span>
+</span><span id="Part-195"><a href="#Part-195"><span class="linenos">195</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
+</span><span id="Part-196"><a href="#Part-196"><span class="linenos">196</span></a>        <span class="n">oneof</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+</span><span id="Part-197"><a href="#Part-197"><span class="linenos">197</span></a>        <span class="n">message</span><span class="o">=</span><span class="s2">&quot;ExecutableCode&quot;</span><span class="p">,</span>
+</span><span id="Part-198"><a href="#Part-198"><span class="linenos">198</span></a>    <span class="p">)</span>
+</span><span id="Part-199"><a href="#Part-199"><span class="linenos">199</span></a>    <span class="n">code_execution_result</span><span class="p">:</span> <span class="s2">&quot;CodeExecutionResult&quot;</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Part-200"><a href="#Part-200"><span class="linenos">200</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">MESSAGE</span><span class="p">,</span>
+</span><span id="Part-201"><a href="#Part-201"><span class="linenos">201</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+</span><span id="Part-202"><a href="#Part-202"><span class="linenos">202</span></a>        <span class="n">oneof</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+</span><span id="Part-203"><a href="#Part-203"><span class="linenos">203</span></a>        <span class="n">message</span><span class="o">=</span><span class="s2">&quot;CodeExecutionResult&quot;</span><span class="p">,</span>
+</span><span id="Part-204"><a href="#Part-204"><span class="linenos">204</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>A datatype containing media that is part of a multi-part <code><a href="#Content">Content</a></code>
+message.</p>
+
+<p>A <code><a href="#Part">Part</a></code> consists of data which has an associated datatype. A
+<code><a href="#Part">Part</a></code> can only contain one of the accepted types in
+<code>Part.data</code>.</p>
+
+<p>A <code><a href="#Part">Part</a></code> must have a fixed IANA MIME type identifying the type and
+subtype of the media if the <code><a href="#Part.inline_data">inline_data</a></code> field is filled with raw
+bytes.</p>
+
+<p>This message has <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">oneof</a> fields (mutually exclusive fields).
+For each oneof, at most one member field can be set at the same time.
+Setting any member of the oneof automatically clears all other
+members.</p>
+
+<h6 id="attributes">Attributes:</h6>
+
+<ul>
+<li><p><strong>text (str):</strong>  Inline text.</p>
+
+<p>This field is a member of <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">oneof</a> <code>data</code>.</p></li>
+<li><p><strong>inline_data (google.ai.generativelanguage_v1beta.types.Blob):</strong>  Inline media bytes.</p>
+
+<p>This field is a member of <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">oneof</a> <code>data</code>.</p></li>
+<li><p><strong>function_call (google.ai.generativelanguage_v1beta.types.FunctionCall):</strong>  A predicted <code>FunctionCall</code> returned from the model that
+contains a string representing the
+<code>FunctionDeclaration.name</code> with the arguments and their
+values.</p>
+
+<p>This field is a member of <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">oneof</a> <code>data</code>.</p></li>
+<li><p><strong>function_response (google.ai.generativelanguage_v1beta.types.FunctionResponse):</strong>  The result output of a <code>FunctionCall</code> that contains a
+string representing the <code>FunctionDeclaration.name</code> and a
+structured JSON object containing any output from the
+function is used as context to the model.</p>
+
+<p>This field is a member of <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">oneof</a> <code>data</code>.</p></li>
+<li><p><strong>file_data (google.ai.generativelanguage_v1beta.types.FileData):</strong>  URI based data.</p>
+
+<p>This field is a member of <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">oneof</a> <code>data</code>.</p></li>
+<li><p><strong>executable_code (google.ai.generativelanguage_v1beta.types.ExecutableCode):</strong>  Code generated by the model that is meant to
+be executed.</p>
+
+<p>This field is a member of <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">oneof</a> <code>data</code>.</p></li>
+<li><p><strong>code_execution_result (google.ai.generativelanguage_v1beta.types.CodeExecutionResult):</strong>  Result of executing the <code>ExecutableCode</code>.</p>
+
+<p>This field is a member of <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">oneof</a> <code>data</code>.</p></li>
+</ul>
+</div>
+
+
+                            <div id="Part.text" class="classattr">
+                                <div class="attr variable">
+            <span class="name">text</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Part.text"></a>
+    
+    
+
+                            </div>
+                            <div id="Part.inline_data" class="classattr">
+                                <div class="attr variable">
+            <span class="name">inline_data</span><span class="annotation">: google.ai.generativelanguage_v1beta.types.content.Blob</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Part.inline_data"></a>
+    
+    
+
+                            </div>
+                            <div id="Part.function_call" class="classattr">
+                                <div class="attr variable">
+            <span class="name">function_call</span><span class="annotation">: google.ai.generativelanguage_v1beta.types.content.FunctionCall</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Part.function_call"></a>
+    
+    
+
+                            </div>
+                            <div id="Part.function_response" class="classattr">
+                                <div class="attr variable">
+            <span class="name">function_response</span><span class="annotation">: google.ai.generativelanguage_v1beta.types.content.FunctionResponse</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Part.function_response"></a>
+    
+    
+
+                            </div>
+                            <div id="Part.file_data" class="classattr">
+                                <div class="attr variable">
+            <span class="name">file_data</span><span class="annotation">: google.ai.generativelanguage_v1beta.types.content.FileData</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Part.file_data"></a>
+    
+    
+
+                            </div>
+                            <div id="Part.executable_code" class="classattr">
+                                <div class="attr variable">
+            <span class="name">executable_code</span><span class="annotation">: google.ai.generativelanguage_v1beta.types.content.ExecutableCode</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Part.executable_code"></a>
+    
+    
+
+                            </div>
+                            <div id="Part.code_execution_result" class="classattr">
+                                <div class="attr variable">
+            <span class="name">code_execution_result</span><span class="annotation">: google.ai.generativelanguage_v1beta.types.content.CodeExecutionResult</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Part.code_execution_result"></a>
+    
+    
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>proto.message.Message</dt>
+                                <dd id="Part.__init__" class="function">Message</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="Response">
+                    <div class="attr variable">
+            <span class="name">Response</span><span class="annotation">: TypeAlias</span>        =
+<span class="default_value">google.generativeai.types.generation_types.GenerateContentResponse</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Response"></a>
+    
+    
+
+                </section>
+                <section id="Schema">
+                            <input id="Schema-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">Schema</span><wbr>(<span class="base">proto.message.Message</span>):
+
+                <label class="view-source-button" for="Schema-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Schema"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Schema-572"><a href="#Schema-572"><span class="linenos">572</span></a><span class="k">class</span> <span class="nc">Schema</span><span class="p">(</span><span class="n">proto</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
+</span><span id="Schema-573"><a href="#Schema-573"><span class="linenos">573</span></a><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;The ``Schema`` object allows the definition of input and output data</span>
+</span><span id="Schema-574"><a href="#Schema-574"><span class="linenos">574</span></a><span class="sd">    types. These types can be objects, but also primitives and arrays.</span>
+</span><span id="Schema-575"><a href="#Schema-575"><span class="linenos">575</span></a><span class="sd">    Represents a select subset of an `OpenAPI 3.0 schema</span>
+</span><span id="Schema-576"><a href="#Schema-576"><span class="linenos">576</span></a><span class="sd">    object &lt;https://spec.openapis.org/oas/v3.0.3#schema&gt;`__.</span>
+</span><span id="Schema-577"><a href="#Schema-577"><span class="linenos">577</span></a>
+</span><span id="Schema-578"><a href="#Schema-578"><span class="linenos">578</span></a>
+</span><span id="Schema-579"><a href="#Schema-579"><span class="linenos">579</span></a><span class="sd">    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields</span>
+</span><span id="Schema-580"><a href="#Schema-580"><span class="linenos">580</span></a>
+</span><span id="Schema-581"><a href="#Schema-581"><span class="linenos">581</span></a><span class="sd">    Attributes:</span>
+</span><span id="Schema-582"><a href="#Schema-582"><span class="linenos">582</span></a><span class="sd">        type_ (google.ai.generativelanguage_v1beta.types.Type):</span>
+</span><span id="Schema-583"><a href="#Schema-583"><span class="linenos">583</span></a><span class="sd">            Required. Data type.</span>
+</span><span id="Schema-584"><a href="#Schema-584"><span class="linenos">584</span></a><span class="sd">        format_ (str):</span>
+</span><span id="Schema-585"><a href="#Schema-585"><span class="linenos">585</span></a><span class="sd">            Optional. The format of the data. This is</span>
+</span><span id="Schema-586"><a href="#Schema-586"><span class="linenos">586</span></a><span class="sd">            used only for primitive datatypes. Supported</span>
+</span><span id="Schema-587"><a href="#Schema-587"><span class="linenos">587</span></a><span class="sd">            formats:</span>
+</span><span id="Schema-588"><a href="#Schema-588"><span class="linenos">588</span></a>
+</span><span id="Schema-589"><a href="#Schema-589"><span class="linenos">589</span></a><span class="sd">             for NUMBER type: float, double</span>
+</span><span id="Schema-590"><a href="#Schema-590"><span class="linenos">590</span></a><span class="sd">             for INTEGER type: int32, int64</span>
+</span><span id="Schema-591"><a href="#Schema-591"><span class="linenos">591</span></a><span class="sd">        description (str):</span>
+</span><span id="Schema-592"><a href="#Schema-592"><span class="linenos">592</span></a><span class="sd">            Optional. A brief description of the</span>
+</span><span id="Schema-593"><a href="#Schema-593"><span class="linenos">593</span></a><span class="sd">            parameter. This could contain examples of use.</span>
+</span><span id="Schema-594"><a href="#Schema-594"><span class="linenos">594</span></a><span class="sd">            Parameter description may be formatted as</span>
+</span><span id="Schema-595"><a href="#Schema-595"><span class="linenos">595</span></a><span class="sd">            Markdown.</span>
+</span><span id="Schema-596"><a href="#Schema-596"><span class="linenos">596</span></a><span class="sd">        nullable (bool):</span>
+</span><span id="Schema-597"><a href="#Schema-597"><span class="linenos">597</span></a><span class="sd">            Optional. Indicates if the value may be null.</span>
+</span><span id="Schema-598"><a href="#Schema-598"><span class="linenos">598</span></a><span class="sd">        enum (MutableSequence[str]):</span>
+</span><span id="Schema-599"><a href="#Schema-599"><span class="linenos">599</span></a><span class="sd">            Optional. Possible values of the element of Type.STRING with</span>
+</span><span id="Schema-600"><a href="#Schema-600"><span class="linenos">600</span></a><span class="sd">            enum format. For example we can define an Enum Direction as</span>
+</span><span id="Schema-601"><a href="#Schema-601"><span class="linenos">601</span></a><span class="sd">            : {type:STRING, format:enum, enum:[&quot;EAST&quot;, NORTH&quot;, &quot;SOUTH&quot;,</span>
+</span><span id="Schema-602"><a href="#Schema-602"><span class="linenos">602</span></a><span class="sd">            &quot;WEST&quot;]}</span>
+</span><span id="Schema-603"><a href="#Schema-603"><span class="linenos">603</span></a><span class="sd">        items (google.ai.generativelanguage_v1beta.types.Schema):</span>
+</span><span id="Schema-604"><a href="#Schema-604"><span class="linenos">604</span></a><span class="sd">            Optional. Schema of the elements of</span>
+</span><span id="Schema-605"><a href="#Schema-605"><span class="linenos">605</span></a><span class="sd">            Type.ARRAY.</span>
+</span><span id="Schema-606"><a href="#Schema-606"><span class="linenos">606</span></a>
+</span><span id="Schema-607"><a href="#Schema-607"><span class="linenos">607</span></a><span class="sd">            This field is a member of `oneof`_ ``_items``.</span>
+</span><span id="Schema-608"><a href="#Schema-608"><span class="linenos">608</span></a><span class="sd">        properties (MutableMapping[str, google.ai.generativelanguage_v1beta.types.Schema]):</span>
+</span><span id="Schema-609"><a href="#Schema-609"><span class="linenos">609</span></a><span class="sd">            Optional. Properties of Type.OBJECT.</span>
+</span><span id="Schema-610"><a href="#Schema-610"><span class="linenos">610</span></a><span class="sd">        required (MutableSequence[str]):</span>
+</span><span id="Schema-611"><a href="#Schema-611"><span class="linenos">611</span></a><span class="sd">            Optional. Required properties of Type.OBJECT.</span>
+</span><span id="Schema-612"><a href="#Schema-612"><span class="linenos">612</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="Schema-613"><a href="#Schema-613"><span class="linenos">613</span></a>
+</span><span id="Schema-614"><a href="#Schema-614"><span class="linenos">614</span></a>    <span class="n">type_</span><span class="p">:</span> <span class="s2">&quot;Type&quot;</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Schema-615"><a href="#Schema-615"><span class="linenos">615</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">ENUM</span><span class="p">,</span>
+</span><span id="Schema-616"><a href="#Schema-616"><span class="linenos">616</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="Schema-617"><a href="#Schema-617"><span class="linenos">617</span></a>        <span class="n">enum</span><span class="o">=</span><span class="s2">&quot;Type&quot;</span><span class="p">,</span>
+</span><span id="Schema-618"><a href="#Schema-618"><span class="linenos">618</span></a>    <span class="p">)</span>
+</span><span id="Schema-619"><a href="#Schema-619"><span class="linenos">619</span></a>    <span class="n">format_</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Schema-620"><a href="#Schema-620"><span class="linenos">620</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">STRING</span><span class="p">,</span>
+</span><span id="Schema-621"><a href="#Schema-621"><span class="linenos">621</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+</span><span id="Schema-622"><a href="#Schema-622"><span class="linenos">622</span></a>    <span class="p">)</span>
+</span><span id="Schema-623"><a href="#Schema-623"><span class="linenos">623</span></a>    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Schema-624"><a href="#Schema-624"><span class="linenos">624</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">STRING</span><span class="p">,</span>
+</span><span id="Schema-625"><a href="#Schema-625"><span class="linenos">625</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+</span><span id="Schema-626"><a href="#Schema-626"><span class="linenos">626</span></a>    <span class="p">)</span>
+</span><span id="Schema-627"><a href="#Schema-627"><span class="linenos">627</span></a>    <span class="n">nullable</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Schema-628"><a href="#Schema-628"><span class="linenos">628</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">BOOL</span><span class="p">,</span>
+</span><span id="Schema-629"><a href="#Schema-629"><span class="linenos">629</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+</span><span id="Schema-630"><a href="#Schema-630"><span class="linenos">630</span></a>    <span class="p">)</span>
+</span><span id="Schema-631"><a href="#Schema-631"><span class="linenos">631</span></a>    <span class="n">enum</span><span class="p">:</span> <span class="n">MutableSequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">RepeatedField</span><span class="p">(</span>
+</span><span id="Schema-632"><a href="#Schema-632"><span class="linenos">632</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">STRING</span><span class="p">,</span>
+</span><span id="Schema-633"><a href="#Schema-633"><span class="linenos">633</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+</span><span id="Schema-634"><a href="#Schema-634"><span class="linenos">634</span></a>    <span class="p">)</span>
+</span><span id="Schema-635"><a href="#Schema-635"><span class="linenos">635</span></a>    <span class="n">items</span><span class="p">:</span> <span class="s2">&quot;Schema&quot;</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Schema-636"><a href="#Schema-636"><span class="linenos">636</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">MESSAGE</span><span class="p">,</span>
+</span><span id="Schema-637"><a href="#Schema-637"><span class="linenos">637</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+</span><span id="Schema-638"><a href="#Schema-638"><span class="linenos">638</span></a>        <span class="n">optional</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="Schema-639"><a href="#Schema-639"><span class="linenos">639</span></a>        <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Schema&quot;</span><span class="p">,</span>
+</span><span id="Schema-640"><a href="#Schema-640"><span class="linenos">640</span></a>    <span class="p">)</span>
+</span><span id="Schema-641"><a href="#Schema-641"><span class="linenos">641</span></a>    <span class="n">properties</span><span class="p">:</span> <span class="n">MutableMapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Schema&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">MapField</span><span class="p">(</span>
+</span><span id="Schema-642"><a href="#Schema-642"><span class="linenos">642</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">STRING</span><span class="p">,</span>
+</span><span id="Schema-643"><a href="#Schema-643"><span class="linenos">643</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">MESSAGE</span><span class="p">,</span>
+</span><span id="Schema-644"><a href="#Schema-644"><span class="linenos">644</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+</span><span id="Schema-645"><a href="#Schema-645"><span class="linenos">645</span></a>        <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Schema&quot;</span><span class="p">,</span>
+</span><span id="Schema-646"><a href="#Schema-646"><span class="linenos">646</span></a>    <span class="p">)</span>
+</span><span id="Schema-647"><a href="#Schema-647"><span class="linenos">647</span></a>    <span class="n">required</span><span class="p">:</span> <span class="n">MutableSequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">RepeatedField</span><span class="p">(</span>
+</span><span id="Schema-648"><a href="#Schema-648"><span class="linenos">648</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">STRING</span><span class="p">,</span>
+</span><span id="Schema-649"><a href="#Schema-649"><span class="linenos">649</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+</span><span id="Schema-650"><a href="#Schema-650"><span class="linenos">650</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>The <code><a href="#Schema">Schema</a></code> object allows the definition of input and output data
+types. These types can be objects, but also primitives and arrays.
+Represents a select subset of an <a href="https://spec.openapis.org/oas/v3.0.3#schema">OpenAPI 3.0 schema
+object </a>_.</p>
+
+<h6 id="attributes">Attributes:</h6>
+
+<ul>
+<li><strong>type_ (google.ai.generativelanguage_v1beta.types.Type):</strong>  Required. Data type.</li>
+<li><p><strong>format_ (str):</strong>  Optional. The format of the data. This is
+used only for primitive datatypes. Supported
+formats:</p>
+
+<p>for NUMBER type: float, double
+ for INTEGER type: int32, int64</p></li>
+<li><strong>description (str):</strong>  Optional. A brief description of the
+parameter. This could contain examples of use.
+Parameter description may be formatted as
+Markdown.</li>
+<li><strong>nullable (bool):</strong>  Optional. Indicates if the value may be null.</li>
+<li><strong>enum (MutableSequence[str]):</strong>  Optional. Possible values of the element of <a href="#Type.STRING">Type.STRING</a> with
+enum format. For example we can define an Enum Direction as
+: {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH",
+"WEST"]}</li>
+<li><p><strong>items (google.ai.generativelanguage_v1beta.types.Schema):</strong>  Optional. Schema of the elements of
+<a href="#Type.ARRAY">Type.ARRAY</a>.</p>
+
+<p>This field is a member of <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">oneof</a> <code>_items</code>.</p></li>
+<li><strong>properties (MutableMapping[str, google.ai.generativelanguage_v1beta.types.Schema]):</strong>  Optional. Properties of <a href="#Type.OBJECT">Type.OBJECT</a>.</li>
+<li><strong>required (MutableSequence[str]):</strong>  Optional. Required properties of <a href="#Type.OBJECT">Type.OBJECT</a>.</li>
+</ul>
+</div>
+
+
+                            <div id="Schema.type_" class="classattr">
+                                <div class="attr variable">
+            <span class="name">type_</span><span class="annotation">: google.ai.generativelanguage_v1beta.types.content.Type</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Schema.type_"></a>
+    
+    
+
+                            </div>
+                            <div id="Schema.format_" class="classattr">
+                                <div class="attr variable">
+            <span class="name">format_</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Schema.format_"></a>
+    
+    
+
+                            </div>
+                            <div id="Schema.description" class="classattr">
+                                <div class="attr variable">
+            <span class="name">description</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Schema.description"></a>
+    
+    
+
+                            </div>
+                            <div id="Schema.nullable" class="classattr">
+                                <div class="attr variable">
+            <span class="name">nullable</span><span class="annotation">: bool</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Schema.nullable"></a>
+    
+    
+
+                            </div>
+                            <div id="Schema.enum" class="classattr">
+                                <div class="attr variable">
+            <span class="name">enum</span><span class="annotation">: MutableSequence[str]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Schema.enum"></a>
+    
+    
+
+                            </div>
+                            <div id="Schema.items" class="classattr">
+                                <div class="attr variable">
+            <span class="name">items</span><span class="annotation">: google.ai.generativelanguage_v1beta.types.content.Schema</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Schema.items"></a>
+    
+    
+
+                            </div>
+                            <div id="Schema.properties" class="classattr">
+                                <div class="attr variable">
+            <span class="name">properties</span><span class="annotation">: MutableMapping[str, google.ai.generativelanguage_v1beta.types.content.Schema]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Schema.properties"></a>
+    
+    
+
+                            </div>
+                            <div id="Schema.required" class="classattr">
+                                <div class="attr variable">
+            <span class="name">required</span><span class="annotation">: MutableSequence[str]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Schema.required"></a>
+    
+    
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>proto.message.Message</dt>
+                                <dd id="Schema.__init__" class="function">Message</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="Schema.PropertiesEntry">
+                    <div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">Schema.PropertiesEntry</span><wbr>(<span class="base">proto.message.Message</span>):
+
+        
+    </div>
+    <a class="headerlink" href="#Schema.PropertiesEntry"></a>
+    
+            <div class="docstring"><p>The abstract base class for a message.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>mapping (Union[dict, ~.Message]):</strong>  A dictionary or message to be
+used to determine the values for this message.</li>
+<li><strong>ignore_unknown_fields (Optional(bool)):</strong>  If True, do not raise errors for
+unknown fields. Only applied if <code>mapping</code> is a mapping type or there
+are keyword parameters.</li>
+<li><strong>kwargs (dict):</strong>  Keys and values corresponding to the fields of the
+message.</li>
+</ul>
+</div>
+
+
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>proto.message.Message</dt>
+                                <dd id="Schema.PropertiesEntry.__init__" class="function">Message</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="Structure">
+                    <div class="attr variable">
+            <span class="name">Structure</span><span class="annotation">: TypeAlias</span>        =
+<span class="default_value">google.ai.generativelanguage_v1beta.types.content.FunctionResponse</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Structure"></a>
+    
+    
+
+                </section>
+                <section id="Tool">
+                            <input id="Tool-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">Tool</span><wbr>(<span class="base">proto.message.Message</span>):
+
+                <label class="view-source-button" for="Tool-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Tool"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Tool-344"><a href="#Tool-344"><span class="linenos">344</span></a><span class="k">class</span> <span class="nc">Tool</span><span class="p">(</span><span class="n">proto</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
+</span><span id="Tool-345"><a href="#Tool-345"><span class="linenos">345</span></a><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Tool details that the model may use to generate response.</span>
+</span><span id="Tool-346"><a href="#Tool-346"><span class="linenos">346</span></a>
+</span><span id="Tool-347"><a href="#Tool-347"><span class="linenos">347</span></a><span class="sd">    A ``Tool`` is a piece of code that enables the system to interact</span>
+</span><span id="Tool-348"><a href="#Tool-348"><span class="linenos">348</span></a><span class="sd">    with external systems to perform an action, or set of actions,</span>
+</span><span id="Tool-349"><a href="#Tool-349"><span class="linenos">349</span></a><span class="sd">    outside of knowledge and scope of the model.</span>
+</span><span id="Tool-350"><a href="#Tool-350"><span class="linenos">350</span></a>
+</span><span id="Tool-351"><a href="#Tool-351"><span class="linenos">351</span></a><span class="sd">    Attributes:</span>
+</span><span id="Tool-352"><a href="#Tool-352"><span class="linenos">352</span></a><span class="sd">        function_declarations (MutableSequence[google.ai.generativelanguage_v1beta.types.FunctionDeclaration]):</span>
+</span><span id="Tool-353"><a href="#Tool-353"><span class="linenos">353</span></a><span class="sd">            Optional. A list of ``FunctionDeclarations`` available to</span>
+</span><span id="Tool-354"><a href="#Tool-354"><span class="linenos">354</span></a><span class="sd">            the model that can be used for function calling.</span>
+</span><span id="Tool-355"><a href="#Tool-355"><span class="linenos">355</span></a>
+</span><span id="Tool-356"><a href="#Tool-356"><span class="linenos">356</span></a><span class="sd">            The model or system does not execute the function. Instead</span>
+</span><span id="Tool-357"><a href="#Tool-357"><span class="linenos">357</span></a><span class="sd">            the defined function may be returned as a</span>
+</span><span id="Tool-358"><a href="#Tool-358"><span class="linenos">358</span></a><span class="sd">            [FunctionCall][content.part.function_call] with arguments to</span>
+</span><span id="Tool-359"><a href="#Tool-359"><span class="linenos">359</span></a><span class="sd">            the client side for execution. The model may decide to call</span>
+</span><span id="Tool-360"><a href="#Tool-360"><span class="linenos">360</span></a><span class="sd">            a subset of these functions by populating</span>
+</span><span id="Tool-361"><a href="#Tool-361"><span class="linenos">361</span></a><span class="sd">            [FunctionCall][content.part.function_call] in the response.</span>
+</span><span id="Tool-362"><a href="#Tool-362"><span class="linenos">362</span></a><span class="sd">            The next conversation turn may contain a</span>
+</span><span id="Tool-363"><a href="#Tool-363"><span class="linenos">363</span></a><span class="sd">            [FunctionResponse][content.part.function_response] with the</span>
+</span><span id="Tool-364"><a href="#Tool-364"><span class="linenos">364</span></a><span class="sd">            [content.role] &quot;function&quot; generation context for the next</span>
+</span><span id="Tool-365"><a href="#Tool-365"><span class="linenos">365</span></a><span class="sd">            model turn.</span>
+</span><span id="Tool-366"><a href="#Tool-366"><span class="linenos">366</span></a><span class="sd">        code_execution (google.ai.generativelanguage_v1beta.types.CodeExecution):</span>
+</span><span id="Tool-367"><a href="#Tool-367"><span class="linenos">367</span></a><span class="sd">            Optional. Enables the model to execute code</span>
+</span><span id="Tool-368"><a href="#Tool-368"><span class="linenos">368</span></a><span class="sd">            as part of generation.</span>
+</span><span id="Tool-369"><a href="#Tool-369"><span class="linenos">369</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="Tool-370"><a href="#Tool-370"><span class="linenos">370</span></a>
+</span><span id="Tool-371"><a href="#Tool-371"><span class="linenos">371</span></a>    <span class="n">function_declarations</span><span class="p">:</span> <span class="n">MutableSequence</span><span class="p">[</span><span class="s2">&quot;FunctionDeclaration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">RepeatedField</span><span class="p">(</span>
+</span><span id="Tool-372"><a href="#Tool-372"><span class="linenos">372</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">MESSAGE</span><span class="p">,</span>
+</span><span id="Tool-373"><a href="#Tool-373"><span class="linenos">373</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="Tool-374"><a href="#Tool-374"><span class="linenos">374</span></a>        <span class="n">message</span><span class="o">=</span><span class="s2">&quot;FunctionDeclaration&quot;</span><span class="p">,</span>
+</span><span id="Tool-375"><a href="#Tool-375"><span class="linenos">375</span></a>    <span class="p">)</span>
+</span><span id="Tool-376"><a href="#Tool-376"><span class="linenos">376</span></a>    <span class="n">code_execution</span><span class="p">:</span> <span class="s2">&quot;CodeExecution&quot;</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+</span><span id="Tool-377"><a href="#Tool-377"><span class="linenos">377</span></a>        <span class="n">proto</span><span class="o">.</span><span class="n">MESSAGE</span><span class="p">,</span>
+</span><span id="Tool-378"><a href="#Tool-378"><span class="linenos">378</span></a>        <span class="n">number</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+</span><span id="Tool-379"><a href="#Tool-379"><span class="linenos">379</span></a>        <span class="n">message</span><span class="o">=</span><span class="s2">&quot;CodeExecution&quot;</span><span class="p">,</span>
+</span><span id="Tool-380"><a href="#Tool-380"><span class="linenos">380</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Tool details that the model may use to generate response.</p>
+
+<p>A <code><a href="#Tool">Tool</a></code> is a piece of code that enables the system to interact
+with external systems to perform an action, or set of actions,
+outside of knowledge and scope of the model.</p>
+
+<h6 id="attributes">Attributes:</h6>
+
+<ul>
+<li><p><strong>function_declarations (MutableSequence[google.ai.generativelanguage_v1beta.types.FunctionDeclaration]):</strong>  Optional. A list of <code>FunctionDeclarations</code> available to
+the model that can be used for function calling.</p>
+
+<p>The model or system does not execute the function. Instead
+the defined function may be returned as a
+[FunctionCall][content.part.function_call] with arguments to
+the client side for execution. The model may decide to call
+a subset of these functions by populating
+[FunctionCall][content.part.function_call] in the response.
+The next conversation turn may contain a
+[FunctionResponse][content.part.function_response] with the
+[content.role] "function" generation context for the next
+model turn.</p></li>
+<li><strong>code_execution (google.ai.generativelanguage_v1beta.types.CodeExecution):</strong>  Optional. Enables the model to execute code
+as part of generation.</li>
+</ul>
+</div>
+
+
+                            <div id="Tool.function_declarations" class="classattr">
+                                <div class="attr variable">
+            <span class="name">function_declarations</span><span class="annotation">: MutableSequence[google.ai.generativelanguage_v1beta.types.content.FunctionDeclaration]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Tool.function_declarations"></a>
+    
+    
+
+                            </div>
+                            <div id="Tool.code_execution" class="classattr">
+                                <div class="attr variable">
+            <span class="name">code_execution</span><span class="annotation">: google.ai.generativelanguage_v1beta.types.content.CodeExecution</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Tool.code_execution"></a>
+    
+    
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>proto.message.Message</dt>
+                                <dd id="Tool.__init__" class="function">Message</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="Type">
+                            <input id="Type-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">Type</span><wbr>(<span class="base">proto.enums.Enum</span>):
+
+                <label class="view-source-button" for="Type-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Type"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Type-48"><a href="#Type-48"><span class="linenos">48</span></a><span class="k">class</span> <span class="nc">Type</span><span class="p">(</span><span class="n">proto</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+</span><span id="Type-49"><a href="#Type-49"><span class="linenos">49</span></a><span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Type contains the list of OpenAPI data types as defined by</span>
+</span><span id="Type-50"><a href="#Type-50"><span class="linenos">50</span></a><span class="sd">    https://spec.openapis.org/oas/v3.0.3#data-types</span>
+</span><span id="Type-51"><a href="#Type-51"><span class="linenos">51</span></a>
+</span><span id="Type-52"><a href="#Type-52"><span class="linenos">52</span></a><span class="sd">    Values:</span>
+</span><span id="Type-53"><a href="#Type-53"><span class="linenos">53</span></a><span class="sd">        TYPE_UNSPECIFIED (0):</span>
+</span><span id="Type-54"><a href="#Type-54"><span class="linenos">54</span></a><span class="sd">            Not specified, should not be used.</span>
+</span><span id="Type-55"><a href="#Type-55"><span class="linenos">55</span></a><span class="sd">        STRING (1):</span>
+</span><span id="Type-56"><a href="#Type-56"><span class="linenos">56</span></a><span class="sd">            String type.</span>
+</span><span id="Type-57"><a href="#Type-57"><span class="linenos">57</span></a><span class="sd">        NUMBER (2):</span>
+</span><span id="Type-58"><a href="#Type-58"><span class="linenos">58</span></a><span class="sd">            Number type.</span>
+</span><span id="Type-59"><a href="#Type-59"><span class="linenos">59</span></a><span class="sd">        INTEGER (3):</span>
+</span><span id="Type-60"><a href="#Type-60"><span class="linenos">60</span></a><span class="sd">            Integer type.</span>
+</span><span id="Type-61"><a href="#Type-61"><span class="linenos">61</span></a><span class="sd">        BOOLEAN (4):</span>
+</span><span id="Type-62"><a href="#Type-62"><span class="linenos">62</span></a><span class="sd">            Boolean type.</span>
+</span><span id="Type-63"><a href="#Type-63"><span class="linenos">63</span></a><span class="sd">        ARRAY (5):</span>
+</span><span id="Type-64"><a href="#Type-64"><span class="linenos">64</span></a><span class="sd">            Array type.</span>
+</span><span id="Type-65"><a href="#Type-65"><span class="linenos">65</span></a><span class="sd">        OBJECT (6):</span>
+</span><span id="Type-66"><a href="#Type-66"><span class="linenos">66</span></a><span class="sd">            Object type.</span>
+</span><span id="Type-67"><a href="#Type-67"><span class="linenos">67</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="Type-68"><a href="#Type-68"><span class="linenos">68</span></a>    <span class="n">TYPE_UNSPECIFIED</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="Type-69"><a href="#Type-69"><span class="linenos">69</span></a>    <span class="n">STRING</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="Type-70"><a href="#Type-70"><span class="linenos">70</span></a>    <span class="n">NUMBER</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="Type-71"><a href="#Type-71"><span class="linenos">71</span></a>    <span class="n">INTEGER</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="Type-72"><a href="#Type-72"><span class="linenos">72</span></a>    <span class="n">BOOLEAN</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span id="Type-73"><a href="#Type-73"><span class="linenos">73</span></a>    <span class="n">ARRAY</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="Type-74"><a href="#Type-74"><span class="linenos">74</span></a>    <span class="n">OBJECT</span> <span class="o">=</span> <span class="mi">6</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Type contains the list of OpenAPI data types as defined by
+<a href="https://spec.openapis.org/oas/v3.0.3#data-types">https://spec.openapis.org/oas/v3.0.3#data-types</a></p>
+
+<h6 id="values">Values:</h6>
+
+<blockquote>
+  <p>TYPE_UNSPECIFIED (0):
+      Not specified, should not be used.
+  STRING (1):
+      String type.
+  NUMBER (2):
+      Number type.
+  INTEGER (3):
+      Integer type.
+  BOOLEAN (4):
+      Boolean type.
+  ARRAY (5):
+      Array type.
+  OBJECT (6):
+      Object type.</p>
+</blockquote>
+</div>
+
+
+                            <div id="Type.TYPE_UNSPECIFIED" class="classattr">
+                                <div class="attr variable">
+            <span class="name">TYPE_UNSPECIFIED</span>        =
+<span class="default_value">&lt;<a href="#Type.TYPE_UNSPECIFIED">Type.TYPE_UNSPECIFIED</a>: 0&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Type.TYPE_UNSPECIFIED"></a>
+    
+    
+
+                            </div>
+                            <div id="Type.STRING" class="classattr">
+                                <div class="attr variable">
+            <span class="name">STRING</span>        =
+<span class="default_value">&lt;<a href="#Type.STRING">Type.STRING</a>: 1&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Type.STRING"></a>
+    
+    
+
+                            </div>
+                            <div id="Type.NUMBER" class="classattr">
+                                <div class="attr variable">
+            <span class="name">NUMBER</span>        =
+<span class="default_value">&lt;<a href="#Type.NUMBER">Type.NUMBER</a>: 2&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Type.NUMBER"></a>
+    
+    
+
+                            </div>
+                            <div id="Type.INTEGER" class="classattr">
+                                <div class="attr variable">
+            <span class="name">INTEGER</span>        =
+<span class="default_value">&lt;<a href="#Type.INTEGER">Type.INTEGER</a>: 3&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Type.INTEGER"></a>
+    
+    
+
+                            </div>
+                            <div id="Type.BOOLEAN" class="classattr">
+                                <div class="attr variable">
+            <span class="name">BOOLEAN</span>        =
+<span class="default_value">&lt;<a href="#Type.BOOLEAN">Type.BOOLEAN</a>: 4&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Type.BOOLEAN"></a>
+    
+    
+
+                            </div>
+                            <div id="Type.ARRAY" class="classattr">
+                                <div class="attr variable">
+            <span class="name">ARRAY</span>        =
+<span class="default_value">&lt;<a href="#Type.ARRAY">Type.ARRAY</a>: 5&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Type.ARRAY"></a>
+    
+    
+
+                            </div>
+                            <div id="Type.OBJECT" class="classattr">
+                                <div class="attr variable">
+            <span class="name">OBJECT</span>        =
+<span class="default_value">&lt;<a href="#Type.OBJECT">Type.OBJECT</a>: 6&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Type.OBJECT"></a>
+    
+    
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>enum.Enum</dt>
+                                <dd id="Type.name" class="variable">name</dd>
+                <dd id="Type.value" class="variable">value</dd>
+
+            </div>
+            <div><dt>builtins.int</dt>
+                                <dd id="Type.conjugate" class="function">conjugate</dd>
+                <dd id="Type.bit_length" class="function">bit_length</dd>
+                <dd id="Type.bit_count" class="function">bit_count</dd>
+                <dd id="Type.to_bytes" class="function">to_bytes</dd>
+                <dd id="Type.from_bytes" class="function">from_bytes</dd>
+                <dd id="Type.as_integer_ratio" class="function">as_integer_ratio</dd>
+                <dd id="Type.is_integer" class="function">is_integer</dd>
+                <dd id="Type.real" class="variable">real</dd>
+                <dd id="Type.imag" class="variable">imag</dd>
+                <dd id="Type.numerator" class="variable">numerator</dd>
+                <dd id="Type.denominator" class="variable">denominator</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="init_agent_from_config">
+                            <input id="init_agent_from_config-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">init_agent_from_config</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">config</span><span class="p">:</span> <span class="n"><a href="#AgentConfig">AgentConfig</a></span></span><span class="return-annotation">) -> <span class="n">google</span><span class="o">.</span><span class="n">generativeai</span><span class="o">.</span><span class="n">generative_models</span><span class="o">.</span><span class="n">GenerativeModel</span>:</span></span>
+
+                <label class="view-source-button" for="init_agent_from_config-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#init_agent_from_config"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="init_agent_from_config-72"><a href="#init_agent_from_config-72"><span class="linenos">72</span></a><span class="k">def</span> <span class="nf">init_agent_from_config</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="n">AgentConfig</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Agent</span><span class="p">:</span>
+</span><span id="init_agent_from_config-73"><a href="#init_agent_from_config-73"><span class="linenos">73</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize a model from config.&quot;&quot;&quot;</span>
+</span><span id="init_agent_from_config-74"><a href="#init_agent_from_config-74"><span class="linenos">74</span></a>    <span class="n">api_key</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">api_key</span><span class="o">.</span><span class="n">get_secret_value</span><span class="p">()</span> <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">api_key</span> <span class="k">else</span> <span class="kc">None</span>
+</span><span id="init_agent_from_config-75"><a href="#init_agent_from_config-75"><span class="linenos">75</span></a>    <span class="n">genai</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>  <span class="c1"># global assignment!</span>
+</span><span id="init_agent_from_config-76"><a href="#init_agent_from_config-76"><span class="linenos">76</span></a>    <span class="n">gen_config</span> <span class="o">=</span> <span class="n">GenerationConfig</span><span class="p">(</span>
+</span><span id="init_agent_from_config-77"><a href="#init_agent_from_config-77"><span class="linenos">77</span></a>        <span class="n">temperature</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">temperature</span><span class="p">,</span>
+</span><span id="init_agent_from_config-78"><a href="#init_agent_from_config-78"><span class="linenos">78</span></a>        <span class="n">candidate_count</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">candidate_count</span><span class="p">,</span>
+</span><span id="init_agent_from_config-79"><a href="#init_agent_from_config-79"><span class="linenos">79</span></a>        <span class="n">max_output_tokens</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">max_output_tokens</span><span class="p">,</span>
+</span><span id="init_agent_from_config-80"><a href="#init_agent_from_config-80"><span class="linenos">80</span></a>    <span class="p">)</span>
+</span><span id="init_agent_from_config-81"><a href="#init_agent_from_config-81"><span class="linenos">81</span></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="init_agent_from_config-82"><a href="#init_agent_from_config-82"><span class="linenos">82</span></a>        <span class="n">model_name</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span><span id="init_agent_from_config-83"><a href="#init_agent_from_config-83"><span class="linenos">83</span></a>        <span class="n">generation_config</span><span class="o">=</span><span class="n">gen_config</span><span class="p">,</span>
+</span><span id="init_agent_from_config-84"><a href="#init_agent_from_config-84"><span class="linenos">84</span></a>        <span class="n">system_instruction</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">system_instructions</span><span class="p">,</span>
+</span><span id="init_agent_from_config-85"><a href="#init_agent_from_config-85"><span class="linenos">85</span></a>    <span class="p">)</span>
+</span><span id="init_agent_from_config-86"><a href="#init_agent_from_config-86"><span class="linenos">86</span></a>    <span class="k">return</span> <span class="n">model</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Initialize a model from config.</p>
+</div>
+
+
+                </section>
+    </main>
+<script>
+    function escapeHTML(html) {
+        return document.createElement('div').appendChild(document.createTextNode(html)).parentNode.innerHTML;
+    }
+
+    const originalContent = document.querySelector("main.pdoc");
+    let currentContent = originalContent;
+
+    function setContent(innerHTML) {
+        let elem;
+        if (innerHTML) {
+            elem = document.createElement("main");
+            elem.classList.add("pdoc");
+            elem.innerHTML = innerHTML;
+        } else {
+            elem = originalContent;
+        }
+        if (currentContent !== elem) {
+            currentContent.replaceWith(elem);
+            currentContent = elem;
+        }
+    }
+
+    function getSearchTerm() {
+        return (new URL(window.location)).searchParams.get("search");
+    }
+
+    const searchBox = document.querySelector(".pdoc input[type=search]");
+    searchBox.addEventListener("input", function () {
+        let url = new URL(window.location);
+        if (searchBox.value.trim()) {
+            url.hash = "";
+            url.searchParams.set("search", searchBox.value);
+        } else {
+            url.searchParams.delete("search");
+        }
+        history.replaceState("", "", url.toString());
+        onInput();
+    });
+    window.addEventListener("popstate", onInput);
+
+
+    let search, searchErr;
+
+    async function initialize() {
+        try {
+            search = await new Promise((resolve, reject) => {
+                const script = document.createElement("script");
+                script.type = "text/javascript";
+                script.async = true;
+                script.onload = () => resolve(window.pdocSearch);
+                script.onerror = (e) => reject(e);
+                script.src = "../search.js";
+                document.getElementsByTagName("head")[0].appendChild(script);
+            });
+        } catch (e) {
+            console.error("Cannot fetch pdoc search index");
+            searchErr = "Cannot fetch search index.";
+        }
+        onInput();
+
+        document.querySelector("nav.pdoc").addEventListener("click", e => {
+            if (e.target.hash) {
+                searchBox.value = "";
+                searchBox.dispatchEvent(new Event("input"));
+            }
+        });
+    }
+
+    function onInput() {
+        setContent((() => {
+            const term = getSearchTerm();
+            if (!term) {
+                return null
+            }
+            if (searchErr) {
+                return `<h3>Error: ${searchErr}</h3>`
+            }
+            if (!search) {
+                return "<h3>Searching...</h3>"
+            }
+
+            window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+
+            const results = search(term);
+
+            let html;
+            if (results.length === 0) {
+                html = `No search results for '${escapeHTML(term)}'.`
+            } else {
+                html = `<h4>${results.length} search result${results.length > 1 ? "s" : ""} for '${escapeHTML(term)}'.</h4>`;
+            }
+            for (let result of results.slice(0, 10)) {
+                let doc = result.doc;
+                let url = `../${doc.modulename.replaceAll(".", "/")}.html`;
+                if (doc.qualname) {
+                    url += `#${doc.qualname}`;
+                }
+
+                let heading;
+                switch (result.doc.kind) {
+                    case "function":
+                        if (doc.fullname.endsWith(".__init__")) {
+                            heading = `<span class="name">${doc.fullname.replace(/\.__init__$/, "")}</span>${doc.signature}`;
+                        } else {
+                            heading = `<span class="def">${doc.funcdef}</span> <span class="name">${doc.fullname}</span>${doc.signature}`;
+                        }
+                        break;
+                    case "class":
+                        heading = `<span class="def">class</span> <span class="name">${doc.fullname}</span>`;
+                        if (doc.bases)
+                            heading += `<wbr>(<span class="base">${doc.bases}</span>)`;
+                        heading += `:`;
+                        break;
+                    case "variable":
+                        heading = `<span class="name">${doc.fullname}</span>`;
+                        if (doc.annotation)
+                            heading += `<span class="annotation">${doc.annotation}</span>`;
+                        if (doc.default_value)
+                            heading += `<span class="default_value"> = ${doc.default_value}</span>`;
+                        break;
+                    default:
+                        heading = `<span class="name">${doc.fullname}</span>`;
+                        break;
+                }
+                html += `
+                        <section class="search-result">
+                        <a href="${url}" class="attr ${doc.kind}">${heading}</a>
+                        <div class="docstring">${doc.doc}</div>
+                        </section>
+                    `;
+
+            }
+            return html;
+        })());
+    }
+
+    if (getSearchTerm()) {
+        initialize();
+        searchBox.value = getSearchTerm();
+        onInput();
+    } else {
+        searchBox.addEventListener("focus", initialize, {once: true});
+    }
+
+    searchBox.addEventListener("keydown", e => {
+        if (["ArrowDown", "ArrowUp", "Enter"].includes(e.key)) {
+            let focused = currentContent.querySelector(".search-result.focused");
+            if (!focused) {
+                currentContent.querySelector(".search-result").classList.add("focused");
+            } else if (
+                e.key === "ArrowDown"
+                && focused.nextElementSibling
+                && focused.nextElementSibling.classList.contains("search-result")
+            ) {
+                focused.classList.remove("focused");
+                focused.nextElementSibling.classList.add("focused");
+                focused.nextElementSibling.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "nearest"
+                });
+            } else if (
+                e.key === "ArrowUp"
+                && focused.previousElementSibling
+                && focused.previousElementSibling.classList.contains("search-result")
+            ) {
+                focused.classList.remove("focused");
+                focused.previousElementSibling.classList.add("focused");
+                focused.previousElementSibling.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "nearest"
+                });
+            } else if (
+                e.key === "Enter"
+            ) {
+                focused.querySelector("a").click();
+            }
+        }
+    });
+</script></body>
+</html>
